@@ -1,8 +1,8 @@
 {
   "name": "metascraper-image",
   "description": "Get image property from HTML markup",
-  "homepage": "https://metascraper.js.org",
-  "version": "4.3.2",
+  "homepage": "https://nicedoc.io/microlinkhq/metascraper/packages/metascraper-image",
+  "version": "5.7.21",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,11 +11,15 @@
   "bugs": {
     "url": "https://github.com/microlinkhq/metascraper/issues"
   },
+  "keywords": [
+    "image",
+    "metascraper"
+  ],
   "dependencies": {
-    "@metascraper/helpers": "^4.3.2"
+    "@metascraper/helpers": "^5.7.21"
   },
   "devDependencies": {
-    "standard": "11"
+    "standard": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -26,8 +30,5 @@
   "scripts": {
     "test": "exit 0"
   },
-  "license": "MIT",
-  "peerDependencies": {
-    "metascraper": "^4"
-  }
+  "license": "MIT"
 }

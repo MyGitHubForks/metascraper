@@ -1,21 +1,11 @@
 'use strict'
 
-const { publisher } = require('@metascraper/helpers')
+const { $jsonld, publisher, toRule } = require('@metascraper/helpers')
 
 const REGEX_RSS = /^(.*?)\s[-|]\satom$/i
 const REGEX_TITLE = /^.*?[-|]\s+(.*)$/
 
-/**
- * Wrap a rule with validation and formatting logic.
- *
- * @param {Function} rule
- * @return {Function} wrapped
- */
-
-const wrap = rule => ({ htmlDom }) => {
-  const value = rule(htmlDom)
-  return publisher(value)
-}
+const toPublisher = toRule(publisher)
 
 const getFromTitle = (text, regex) => {
   const matches = regex.exec(text)
@@ -25,28 +15,29 @@ const getFromTitle = (text, regex) => {
   return result
 }
 
-/**
- * Rules.
- */
-
 module.exports = () => ({
   publisher: [
-    wrap($ => $('meta[property="og:site_name"]').attr('content')),
-    wrap($ => $('meta[name="application-name"]').attr('content')),
-    wrap($ => $('meta[property="al:android:app_name"]').attr('content')),
-    wrap($ => $('meta[property="al:iphone:app_name"]').attr('content')),
-    wrap($ => $('meta[property="al:ipad:app_name"]').attr('content')),
-    wrap($ => $('meta[name="publisher"]').attr('content')),
-    wrap($ => $('meta[name="twitter:app:name:iphone"]').attr('content')),
-    wrap($ => $('meta[name="twitter:app:name:ipad"]').attr('content')),
-    wrap($ => $('meta[name="twitter:app:name:googleplay"]').attr('content')),
-    wrap($ => $('#logo').text()),
-    wrap($ => $('.logo').text()),
-    wrap($ => $('a[class*="brand"]').text()),
-    wrap($ => $('[class*="brand"]').text()),
-    wrap($ => $('[class*="logo"] a img[alt]').attr('alt')),
-    wrap($ => $('[class*="logo"] img[alt]').attr('alt')),
-    wrap($ => getFromTitle($('title').text(), REGEX_TITLE)),
-    wrap($ => getFromTitle($('link[type*="xml"]').attr('title'), REGEX_RSS))
+    toPublisher($jsonld('publisher.name')),
+    toPublisher($ => $('meta[property="og:site_name"]').attr('content')),
+    toPublisher($ => $('meta[name*="application-name" i]').attr('content')),
+    toPublisher($ => $('meta[property="al:android:app_name"]').attr('content')),
+    toPublisher($ => $('meta[property="al:iphone:app_name"]').attr('content')),
+    toPublisher($ => $('meta[property="al:ipad:app_name"]').attr('content')),
+    toPublisher($ => $('meta[name="publisher" i]').attr('content')),
+    toPublisher($ => $('meta[name="twitter:app:name:iphone"]').attr('content')),
+    toPublisher($ => $('meta[name="twitter:app:name:ipad"]').attr('content')),
+    toPublisher($ =>
+      $('meta[name="twitter:app:name:googleplay"]').attr('content')
+    ),
+    toPublisher($ => $('#logo').text()),
+    toPublisher($ => $('.logo').text()),
+    toPublisher($ => $('a[class*="brand" i]').text()),
+    toPublisher($ => $('[class*="brand" i]').text()),
+    toPublisher($ => $('[class*="logo" i] a img[alt]').attr('alt')),
+    toPublisher($ => $('[class*="logo" i] img[alt]').attr('alt')),
+    toPublisher($ => getFromTitle($('title').text(), REGEX_TITLE)),
+    toPublisher($ =>
+      getFromTitle($('link[type*="xml" i]').attr('title'), REGEX_RSS)
+    )
   ]
 })

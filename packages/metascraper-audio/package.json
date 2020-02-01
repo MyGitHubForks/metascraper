@@ -1,8 +1,8 @@
 {
   "name": "metascraper-audio",
   "description": "Get audio property from HTML markup",
-  "homepage": "https://metascraper.js.org",
-  "version": "4.3.2",
+  "homepage": "https://nicedoc.io/microlinkhq/metascraper/packages/metascraper-audio",
+  "version": "5.7.21",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,16 +11,19 @@
   "bugs": {
     "url": "https://github.com/microlinkhq/metascraper/issues"
   },
+  "keywords": [
+    "author",
+    "metascraper"
+  ],
   "dependencies": {
-    "@metascraper/helpers": "^4.3.2"
+    "@metascraper/helpers": "^5.7.21"
   },
   "devDependencies": {
     "lodash": "latest",
     "mocha": "latest",
-    "nyc": "latest",
     "should": "latest",
     "snap-shot": "latest",
-    "standard": "11"
+    "standard": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -29,12 +32,9 @@
     "index.js"
   ],
   "scripts": {
-    "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test nyc mocha test"
+    "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test mocha test"
   },
   "license": "MIT",
-  "peerDependencies": {
-    "metascraper": "^4"
-  },
   "standard": {
     "env": [
       "mocha"

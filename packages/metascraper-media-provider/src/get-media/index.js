@@ -1,39 +1,23 @@
 'use strict'
 
-const { protocol } = require('@metascraper/helpers')
-const { isEmpty, reduce } = require('lodash')
 const memoizeOne = require('memoize-one')
+const { noop } = require('lodash')
 
-const { isTwitterUrl, getTwitterInfo } = require('./twitter-info')
-const createGetMedia = require('./get-media')
+const createTwitterProvider = require('./provider/twitter')
+const createGenericProvider = require('./provider/generic')
+const { isTweetUrl, createTunnel } = require('./util')
 
-module.exports = opts => {
-  const getMedia = createGetMedia(opts)
+module.exports = ({ onError = noop, userAgent, cacheDir, proxies }) => {
+  const tunnel = createTunnel(proxies)
+  const fromGeneric = createGenericProvider({
+    tunnel,
+    cacheDir,
+    userAgent,
+    onError
+  })
+  const fromTwitter = createTwitterProvider({ tunnel, userAgent, fromGeneric })
 
-  const getInfo = async url => {
-    if (!isTwitterUrl(url)) return getMedia(url)
-
-    const [videoInfo, twitterVideos] = await Promise.all([
-      getMedia(url),
-      getTwitterInfo(url)
-    ])
-
-    const twitterVideo = { ...videoInfo, extractor_key: 'Twitter' }
-
-    if (isEmpty(twitterVideos)) return twitterVideo
-
-    const formats = reduce(
-      videoInfo.formats,
-      (acc, format, index) => {
-        const { url } = twitterVideos[index]
-        const item = { ...format, url, protocol: protocol(url) }
-        return [...acc, item]
-      },
-      []
-    )
-
-    return { ...twitterVideo, formats }
-  }
-
-  return memoizeOne(getInfo)
+  return memoizeOne(url =>
+    isTweetUrl(url) ? fromTwitter(url) : fromGeneric(url)
+  )
 }

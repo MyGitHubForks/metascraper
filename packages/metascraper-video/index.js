@@ -1,48 +1,35 @@
 'use strict'
 
-const { isMime, url: urlFn, isVideoUrl } = require('@metascraper/helpers')
+const { url: urlFn, toRule, extension, video } = require('@metascraper/helpers')
 
-/**
- * Wrap a rule with validation and formatting logic.
- *
- * @param {Function} rule
- * @return {Function} wrapped
- */
+const { chain } = require('lodash')
 
-const createWrapper = fn => rule => ({ htmlDom, url }) => {
-  const value = rule(htmlDom)
-  return fn(value, url)
-}
+const toUrl = toRule(urlFn)
+const toVideo = toRule(video)
 
-const wrap = createWrapper((value, url) => urlFn(value, { url }))
+const toVideoFromDom = toRule((domNodes, opts) => {
+  const videoUrl = chain(domNodes)
+    .map('attribs.src')
+    .uniq()
+    .orderBy(videoUrl => extension(videoUrl) === 'mp4', ['desc'])
+    .first()
+    .value()
 
-const wrapVideo = createWrapper((value, url) => {
-  const urlValue = urlFn(value, { url })
-  return isVideoUrl(urlValue) && urlValue
+  return video(videoUrl, opts)
 })
-
-const withContentType = (url, contentType) =>
-  isMime(contentType, 'video') ? url : false
 
 /**
  * Rules.
  */
 
 module.exports = () => ({
-  image: [wrap($ => $('video').attr('poster'))],
+  image: [toUrl($ => $('video').attr('poster'))],
   video: [
-    wrapVideo($ => $('meta[property="og:video:secure_url"]').attr('content')),
-    wrapVideo($ => $('meta[property="og:video"]').attr('content')),
-    wrapVideo($ => {
-      const contentType = $(
-        'meta[property="twitter:player:stream:content_type"]'
-      ).attr('content')
-      const streamUrl = $('meta[property="twitter:player:stream"]').attr(
-        'content'
-      )
-      return contentType ? withContentType(streamUrl, contentType) : streamUrl
-    }),
-    wrapVideo($ => $('video').attr('src')),
-    wrapVideo($ => $('video > source').attr('src'))
+    toVideo($ => $('meta[property="og:video:secure_url"]').attr('content')),
+    toVideo($ => $('meta[property="og:video:url"]').attr('content')),
+    toVideo($ => $('meta[property="og:video"]').attr('content')),
+    toVideo($ => $('meta[property="twitter:player:stream"]').attr('content')),
+    toVideoFromDom($ => $('video').get()),
+    toVideoFromDom($ => $('video > source').get())
   ]
 })

@@ -1,8 +1,8 @@
 {
   "name": "metascraper",
-  "description": "A library to easily scrape metadata from an article on the web using Open Graph metadata, regular HTML metadata, and series of fallbacks.",
+  "description": "A library to easily scrape metadata from an article on the web using Open Graph, JSON+LD, regular HTML metadata, and series of fallbacks.",
   "homepage": "https://metascraper.js.org",
-  "version": "4.3.2",
+  "version": "5.7.21",
   "main": "src/index.js",
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
     "url": "https://github.com/microlinkhq/metascraper/issues"
   },
   "keywords": [
+    "RDF",
     "article",
     "browser",
     "cheerio",
@@ -24,6 +25,9 @@
     "get",
     "graph",
     "html",
+    "json-ld",
+    "jsonld",
+    "linked data",
     "meta",
     "metadata",
     "micro format",
@@ -37,6 +41,8 @@
     "parser",
     "scrape",
     "scraper",
+    "semantic",
+    "semantic web",
     "server",
     "site",
     "summarize",
@@ -51,21 +57,23 @@
     "website"
   ],
   "dependencies": {
-    "@metascraper/helpers": "^4.3.2",
+    "@metascraper/helpers": "^5.7.21",
     "cheerio": "~1.0.0-rc.2",
     "cheerio-advanced-selectors": "~2.0.1",
-    "lodash": "~4.17.10",
-    "p-reduce": "~1.0.0",
-    "sanitize-html": "~1.18.2"
+    "lodash": "~4.17.15",
+    "map-values-deep": "~1.0.2",
+    "whoops": "~4.0.2",
+    "xss": "~1.0.6"
   },
   "devDependencies": {
     "clear-module": "latest",
-    "metascraper-clearbit-logo": "latest",
+    "coveralls": "latest",
+    "metascraper-clearbit": "latest",
     "mocha": "latest",
     "nyc": "latest",
     "should": "latest",
     "snap-shot": "latest",
-    "standard": "11"
+    "standard": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -74,6 +82,7 @@
     "src"
   ],
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test nyc mocha test"
   },
   "license": "MIT",

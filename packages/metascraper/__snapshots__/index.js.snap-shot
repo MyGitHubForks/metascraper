@@ -1,11 +1,11 @@
 exports['anandtech 1'] = {
   "author": "Anton Shilov",
-  "date": null,
-  "description": "This morning AMD is introducing their Ryzen PRO processors for business and commercial desktop PCs. The new lineup of CPUs includes the Ryzen 3 PRO, Ryzen 5 PRO and Ryzen 7 PRO families with four, six, or eight cores running at various frequencies. A superset to the standard Ryzen chips, the PRO chips have the same feature set as other Ryzen devices, but also offer enhanced security, 24 months availability, a longer warranty and promise to feature better chip quality.",
+  "date": "2017-06-29T00:00:00.000Z",
+  "description": "This morning AMD is introducing their Ryzen PRO processors for business and commercial desktop PCs. The new lineup of CPUs includes the Ryzen 3 PRO, Ryzen 5 PRO and Ryzen 7 PRO families with four, six, or eight cores running at various frequencies. A superset to the standard Ryzen chips, the PRO chi…",
   "image": "http://images.anandtech.com/doci/11591/amd_ryzen_pro_678_678x452.jpg",
   "video": null,
   "lang": null,
-  "logo": "http://www.anandtech.com/content/images/podcast_a_huge.png",
+  "logo": "http://www.anandtech.com/content/images/rss_logo.png",
   "publisher": "AnandTech",
   "title": "AMD Launches Ryzen PRO CPUs: Enhanced Security, Longer Warranty, Better Quality",
   "url": "http://www.anandtech.com/show/11591/amd-launches-ryzen-pro-cpus-enhanced-security-longer-warranty-better-quality"
@@ -39,7 +39,7 @@ exports['astier 1'] = {
 
 exports['atlasobscura 1'] = {
   "author": "Cara Giaimo",
-  "date": "2017-06-21T13:51:00.000Z",
+  "date": "2017-06-22T20:16:06.000Z",
   "description": "The innocent-looking “Blanda blank” is a pyromaniac.",
   "image": "https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvYXNzZXRzL2Q3ZjA4OTZkYjgwNjI4OGZmN19TY3JlZW4gU2hvdCAyMDE3LTA2LTIxIGF0IDkuMzYuNDQgQU0ucG5nIl0sWyJwIiwidGh1bWIiLCIxMTQ4eDc2NSsxNysxOTkiXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgOTEgLWF1dG8tb3JpZW50Il0sWyJwIiwidGh1bWIiLCI2MDB4PiJdXQ/Screen%20Shot%202017-06-21%20at%209.36.44%20AM.png",
   "video": null,
@@ -52,7 +52,7 @@ exports['atlasobscura 1'] = {
 
 exports['audiense 1'] = {
   "author": "Paz Segura",
-  "date": "2017-09-06T13:41:26.000Z",
+  "date": "2017-09-07T09:25:26.000Z",
   "description": "Looking at the data & audience insights behind the crime drama channels will be able to create tailored tv shows with proven traction ensuring high ratings",
   "image": "https://audiense.com/wp-content/uploads/2017/09/Audiense-Blog-Banner-Twin-Peaks-2017-700x350.png",
   "video": null,
@@ -64,16 +64,16 @@ exports['audiense 1'] = {
 }
 
 exports['bbc 1'] = {
-  "author": "Will Smale Business reporter, BBC News",
-  "date": "1711-07-20T12:00:00.000Z",
+  "author": "Will Smale",
+  "date": "2017-07-14T20:28:07.000Z",
   "description": "How an IT worker quit his day job, and despite having no ideas to begin with, launched a firm from home that made him a multi-millionaire.",
-  "image": "https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/D20B/production/_96817735_carl4.jpg",
+  "image": "https://ichef.bbci.co.uk/news/1024/branded_news/D20B/production/_96817735_carl4.jpg",
   "video": null,
   "lang": "en",
-  "logo": "http://static.bbci.co.uk/news/1.201.01763/apple-touch-icon.png",
+  "logo": "https://www.bbc.co.uk/news/special/2015/newsspec_10857/bbc_news_logo.png?cb=1",
   "publisher": "BBC News",
-  "title": "The man who built a $1bn firm in his basement - BBC News",
-  "url": "http://www.bbc.com/news/business-40504764"
+  "title": "The man who built a $1bn firm in his basement",
+  "url": "https://www.bbc.com/news/business-40504764"
 }
 
 exports['bloomberg 1'] = {
@@ -91,11 +91,11 @@ exports['bloomberg 1'] = {
 
 exports['business-today 1'] = {
   "author": null,
-  "date": "2016-05-14T16:34:00.000Z",
+  "date": "2016-05-18T10:09:00.000Z",
   "description": "HackerRank is helping companies recruit coding champions through online tests.",
   "image": "http://media2.intoday.in/btmt/images/stories/code505_051616043033.jpg",
   "video": null,
-  "lang": null,
+  "lang": "en",
   "logo": "http://www.businesstoday.in/images/favicon.ico",
   "publisher": "Business Today",
   "title": "Cracking the Code",
@@ -103,21 +103,21 @@ exports['business-today 1'] = {
 }
 
 exports['cbr 1'] = {
-  "author": "AAS James Nunns",
-  "date": null,
+  "author": "James Nunns",
+  "date": "2016-09-05T11:49:45.000Z",
   "description": "C-level interview: Rodney Rogers, CEO of Virtustream talked to CBR at EMC World in Las Vegas.",
-  "image": "http://www.cbronline.com/Uploads/NewsArticle/4884858/main.jpg",
+  "image": "https://www.cbronline.com/wp-content/uploads/2016/08/UploadsNewsArticle4884858main.jpg",
   "video": null,
-  "lang": null,
-  "logo": "http://www.cbronline.com/Content/images/favicon.ico",
-  "publisher": "CBR Online",
-  "title": "Virtustream CEO: Taking a masochistic approach to fighting in the cloud market",
-  "url": "http://www.cbronline.com/news/cloud/aas/virtustream-ceo-taking-a-masochistic-approach-to-fighting-in-the-cloud-market-4884858"
+  "lang": "en",
+  "logo": "https://www.cbronline.com/wp-content/uploads/2016/09/cbr-icon.png",
+  "publisher": "Computer Business Review",
+  "title": "Virtustream CEO: Taking a masochistic approach to fighting in the cloud market - Computer Business Review",
+  "url": "https://www.cbronline.com/cloud/virtustream-ceo-taking-a-masochistic-approach-to-fighting-in-the-cloud-market-4884858/"
 }
 
 exports['cio 1'] = {
   "author": "David Spark",
-  "date": "2015-06-03T12:06:00.000Z",
+  "date": "2015-06-03T00:00:00.000Z",
   "description": "If IT is going to better align themselves with business operations, they must be able to objectively quantify the value of the cloud.",
   "image": "http://images.techhive.com/images/article/2015/06/msftone_cloudperspective4-100588855-primary.idge.png",
   "video": null,
@@ -148,7 +148,7 @@ exports['cnet 1'] = {
   "image": "https://cnet3.cbsistatic.com/hub/i/r/2016/05/23/ee9a228a-d1d9-40b3-b401-4ba0e07e2fce/thumbnail/670x503/90dc7a2315faa0f311e2e8f43e578847/pebblecore3.jpg",
   "video": null,
   "lang": "en",
-  "logo": null,
+  "logo": "http://www.cnet.com/favicon.ico",
   "publisher": "CNET",
   "title": "Pebble 2, Pebble Time 2, Pebble Core: Pebble’s fitness hat trick adds heart rate, GPS, Spotify, and 3G",
   "url": "http://www.cnet.com/news/pebble-2-pebble-time-2-pebble-core-announced-coming-this-year-and-2017/"
@@ -156,7 +156,7 @@ exports['cnet 1'] = {
 
 exports['computerworld 1'] = {
   "author": "Robert Shields",
-  "date": "2016-04-15T18:52:00.000Z",
+  "date": "2016-04-15T00:00:00.000Z",
   "description": "My healthcare data is what I want protected the most (intimate details about my family’s health, where we live, and financial information). Anything and everything a hacker could want! It is safe? As a data security professional and citizen, I know the answer is not good.",
   "image": "http://images.techhive.com/images/article/2016/04/blog-31_apr15_image-1-100656409-primary.idge.jpg",
   "video": null,
@@ -182,7 +182,7 @@ exports['crn 1'] = {
 
 exports['economic-times 1'] = {
   "author": "J Vignesh",
-  "date": "2016-01-12T22:34:00.000Z",
+  "date": "2016-01-12T17:04:00.000Z",
   "description": "HackerRank, a tech recruiting company, has launched HackerRank Jobs, to bridge the gap between the applicant and recruiter.",
   "image": "http://economictimes.indiatimes.com/thumb/msid-50551911,width-600,resizemode-4/hackerrank-launches-job-search-platform-hackerrank-jobs.jpg",
   "video": null,
@@ -206,30 +206,17 @@ exports['entrepreneur 1'] = {
   "url": "https://www.entrepreneur.com/article/275188"
 }
 
-exports['et-tech 1'] = {
-  "author": "TV Mahalingam",
-  "date": "2016-05-25T00:00:00.000Z",
-  "description": "Dell speaks about the complexities of engineering the biggest acquisition in tech history, Dell’s future bets and why he continues to remain bullish..",
-  "image": "http://economictimes.indiatimes.com/photo/michael-dell-on-complexities-involved-in-pulling-off-the-biggest-tech-acquisition-dell-s-future-bets-more/52424992.cms",
-  "video": null,
-  "lang": null,
-  "logo": "http://b2bstatic.iimg.in/Themes/Release/images/responsive/tech-logo-square.jpg",
-  "publisher": "ETtech.com",
-  "title": "Michael Dell on complexities involved in pulling off the biggest tech acquisition, Dell’s future bets & more | ETtech",
-  "url": "http://tech.economictimes.indiatimes.com/news/corporate/michael-dell-biggest-tech-acquisition-future-bets/52424992"
-}
-
 exports['eweek 1'] = {
   "author": "Darryl K. Taft",
-  "date": null,
+  "date": "2019-01-09T09:01:37.000Z",
   "description": "Microsoft and HackerRank have delivered a new Bing search feature that enables developers to quickly find solutions to coding queries.",
-  "image": "http://www.eweek.com/imagesvr_ce/232/290x195bingsearch1.jpg",
+  "image": "http://www.eweek.com/imagesvr_ez/b2bezp/2016/08/290x195bingsearch1_18.jpg?alias=social_image",
   "video": null,
-  "lang": null,
-  "logo": "http://www.eweek.com/images/favicon.ico",
-  "publisher": null,
+  "lang": "en",
+  "logo": "http://www.eweek.com/bundles/eweekbase/images/favicon.ico",
+  "publisher": "eWEEK",
   "title": "Microsoft, HackerRank Launch Bing Search Tool for Programmers",
-  "url": "http://www.eweek.com/developer/microsoft-hackerrank-launch-bing-search-tool-for-programmers.html"
+  "url": "https://www.eweek.com/development/microsoft-hackerrank-launch-bing-search-tool-for-programmers"
 }
 
 exports['fast-company 1'] = {
@@ -254,7 +241,7 @@ exports['fastersite 1'] = {
   "lang": null,
   "logo": "http://gent.ilcore.com/favicon.ico",
   "publisher": "Fastersite",
-  "title": "A better timer for JavaScript",
+  "title": "Fastersite: A better timer for JavaScript",
   "url": "http://gent.ilcore.com/2012/06/better-timer-for-javascript.html"
 }
 
@@ -286,7 +273,7 @@ exports['financial-times 1'] = {
 
 exports['forbes 1'] = {
   "author": "George Anders",
-  "date": "2015-09-30T00:00:00.000Z",
+  "date": "2015-09-30T15:49:44.000Z",
   "description": "HackerRank, a fast-growing company that runs coding contests to identify top software engineers, has hired Facebook and Google veteran Grady Burnett to be its chief operating officer.",
   "image": "http://blogs-images.forbes.com/georgeanders/files/2015/09/HackerRank-1940x827.jpg",
   "video": null,
@@ -299,12 +286,12 @@ exports['forbes 1'] = {
 
 exports['fortune 1'] = {
   "author": "Kia Kokalitcheva",
-  "date": "2015-10-05T00:00:00.000Z",
+  "date": "2015-10-05T20:52:17.000Z",
   "description": "HackerRank, a four-year-old startup, is changing the way companies find and evaluate programmers.",
   "image": "https://fortunedotcom.files.wordpress.com/2015/09/gettyimages-1852881881.jpg",
   "video": null,
   "lang": "en",
-  "logo": "http://fortune.com/img/favicons/favicon-192.png",
+  "logo": "http://fortune.com/img/logo.png",
   "publisher": "Fortune",
   "title": "Why your next job search may involve solving online puzzles",
   "url": "http://fortune.com/2015/10/05/hackerrank-recruiting-tool/"
@@ -410,15 +397,15 @@ exports['lean-data 1'] = {
   "lang": "en",
   "logo": "http://www.leandatainc.com/wp-content/uploads/2015/11/favicon.ico",
   "publisher": "LeanData",
-  "title": "The Winds of Change",
+  "title": "LeanData | The Winds of Change",
   "url": "http://www.leandatainc.com/account-based-sales-marketing/the-winds-of-change"
 }
 
 exports['linkedin (company) 1'] = {
   "author": null,
   "date": null,
-  "description": null,
-  "image": null,
+  "description": "LinkedIn领英",
+  "image": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
   "video": null,
   "lang": "en",
   "logo": "https://static.licdn.com/sc/h/eahiplrwoq61f4uan012ia17i",
@@ -469,7 +456,7 @@ exports['mac-rumors 1'] = {
 exports['market-wired 1'] = {
   "author": null,
   "date": "2016-04-06T17:00:00.000Z",
-  "description": "SAN FRANCISCO, CA--(Marketwired - April 06, 2016) - Segment, the customer data platform, today released Sources, giving companies access to new types of cloud services data for a more comprehensive view of their customers. With just a few clicks, businesses can combine crucial data from a variety of customer touch...",
+  "description": "SAN FRANCISCO, CA--(Marketwired - April 06, 2016) - Segment, the customer data platform, today released Sources, giving companies access to new types of cloud services data for a more comprehensive view of their customers. With just a few clicks, businesses can combine crucial data from a variety of…",
   "image": "http://www.marketwire.com/library/MwGo/2016/4/4/11G091766/mw1a0ss3mck1sv91saj19m310kr1t782-124371367694.jpg",
   "video": null,
   "lang": "en",
@@ -481,7 +468,7 @@ exports['market-wired 1'] = {
 
 exports['marketing-land 1'] = {
   "author": "Marketing Land",
-  "date": "2016-02-23T21:31:45.000Z",
+  "date": "2016-02-24T13:53:49.000Z",
   "description": "We’re four weeks away from the next MarTech conference in San Francisco. This will be the biggest and best one yet, and I wanted to give you a deeper previ",
   "image": "http://marketingland.com/wp-content/ml-loads/2016/02/MarTec-2016-US-1200x900-agenda.png",
   "video": null,
@@ -507,14 +494,14 @@ exports['mashable 1'] = {
 
 exports['medium 1'] = {
   "author": "Sean T. Larkin",
-  "date": "2017-06-19T17:23:28.613Z",
+  "date": "2017-07-05T11:54:14.175Z",
   "description": "Now with Scope Hoisting, “magic comments”, and more!",
   "image": "https://cdn-images-1.medium.com/max/1200/1*Ac4K68j43uSbvHnKZKfXPw.jpeg",
   "video": null,
   "lang": null,
-  "logo": "https://cdn-images-1.medium.com/fit/c/304/304/1*Wx82vEGrMfW4AdSLodZXgQ.png",
-  "publisher": "Medium",
-  "title": "🍾🚀 webpack 3: Official Release!! 🚀🍾",
+  "logo": "https://cdn-images-1.medium.com/max/308/1*gdoQ1_5OID90wf1eLTFvWw.png",
+  "publisher": "webpack",
+  "title": "🍾🚀 webpack 3: Official Release!! 🚀🍾 – webpack – Medium",
   "url": "https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b"
 }
 
@@ -533,7 +520,7 @@ exports['motherboard 1'] = {
 
 exports['nytimes 1'] = {
   "author": "Tim Herrera",
-  "date": "2017-07-03T09:00:04.000Z",
+  "date": "2017-07-05T15:18:50.000Z",
   "description": "Welcome to the second edition of the Smarter Living newsletter.",
   "image": "https://static01.nyt.com/images/2017/06/23/smarter-living/Sl-newsletter-header/Sl-newsletter-header-facebookJumbo-v2.jpg",
   "video": null,
@@ -542,19 +529,6 @@ exports['nytimes 1'] = {
   "publisher": "NYTimes",
   "title": "How to See What the Internet Knows About You (And How to Stop It)",
   "url": "https://www.nytimes.com/2017/07/03/smarter-living/how-to-see-what-the-internet-knows-about-you.html"
-}
-
-exports['pikabu 1'] = {
-  "author": null,
-  "date": null,
-  "description": "Вчера к нам приезжали друзья. К вечеру все засобирались домой, потопали каждый к своей машине. Через 5 минут позвонил один из товарищей и сказал, что его авто заперли. В общем, позвали его обратно домой, чай пить, а сами пока стали думать, что же тут делать. Вот, собственно, как выглядел паркинг",
-  "image": "https://ads.adfox.ru/211055/getCode?p1=bvoqq&p2=v&pfc=bpndz&pfb=eyxrx&pr=[RANDOM]&pe=b",
-  "video": null,
-  "lang": null,
-  "logo": "https://cs.pikabu.ru/images/icon_ios144.png",
-  "publisher": "Комментарий дня ТОП 50 Вот так камеры в Москве фиксируют штрафы. +1314 figurist; 14 часов назад # Годный интерфейс, как в каком-нибудь фильме про хацкеров (:",
-  "title": "Горячее",
-  "url": "https://pikabu.ru"
 }
 
 exports['pr-newswire 1'] = {
@@ -585,7 +559,7 @@ exports['recode 1'] = {
 
 exports['reuters 1'] = {
   "author": "Heather Somerville",
-  "date": "2016-05-13T16:43:00.000Z",
+  "date": "2016-05-13T16:43:53.000Z",
   "description": "Venture capitalists are raising money at the fastest rate in a decade, raking in about $13 billion in the first quarter of 2016.",
   "image": "http://s4.reutersmedia.net/resources/r/?m=02&d=20160513&t=2&i=1137169522&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXNPEC4C0SU",
   "video": null,
@@ -599,7 +573,7 @@ exports['reuters 1'] = {
 exports['san-francisco-chronicle 1'] = {
   "author": "Carolyn Said",
   "date": "2016-04-25T12:00:00.000Z",
-  "description": "[...] it’s natural to think that San Francisco’s new Nasdaq Entrepreneurial Center, which sprawls over 13,000 square feet in a prime SoMa location, would cater exclusively to up-and-coming tech startups. [...] all kind of entrepreneurs, whether they’re launching a taco truck or the next Google, can plug into the center for free classes, mentorship, media coaching, meeting space and other support. The nonprofit center, located near the future Transbay Transit Center, is backed by $10 million from the Nasdaq Educational Foundation, the stock exchange’s 22-year-old philanthropy arm. Outside 505 Howard St., a Times-Square-style electronic ticker scrolls promotions for events and logos of corporate sponsors. Inside, the expansive ground-floor space is divided into various functional areas: a state-of-the-art broadcast studio where budding Jack Dorseys or Marissa Mayers can learn how to handle on-camera interviews; classrooms that can accommodate dozens of people for hands-on trainings; a cafe and meeting space for collaborations; and a big lobby that serves double duty as space for pop-up shops to test products and ideas. The recent college grad knocked on the door, showed off his fledgling product-design studio’s first product, a wristwatch, and was invited to have a three-week pop-up store on site. “It was the absolute best way I could have launched my brand,” said Umaña, whose company, Classic Engineering, is now working on a sculpture-like lamp that turns on and off in response to whistling. There are deep dives into topics like company formation, business mechanics, understanding intellectual property and data security, among others. “Building buzz and excitement around your brand is really an art,” said Alexa Fleischman, CEO and co-founder of Savvy Society, which lets girls design and purchase custom 3-D-printed fashion accessories. [...] that venture funding is tighter, it will offer tips on how to weather this period with alternative financing strategies, for instance. The center hosted a two-day regional workshop for 1776’s Challenge Cup startup contest and helped it identify interesting entrepreneurs, mentors, coaches and local experts.",
+  "description": "[...] it’s natural to think that San Francisco’s new Nasdaq Entrepreneurial Center, which sprawls over 13,000 square feet in a prime SoMa location, would cater exclusively to up-and-coming tech startups. [...] all kind of entrepreneurs, whether they’re launching a taco truck or the next Google, can…",
   "image": "http://ww3.hdnux.com/photos/45/53/13/9876166/5/rawImage.jpg",
   "video": null,
   "lang": null,
@@ -616,7 +590,7 @@ exports['segment 1'] = {
   "image": "https://c19f7be2e84987e7904e-bf41efcb49679c193a4ec0f3210da86f.ssl.cf1.rackcdn.com/photos/40528-1-1.jpg",
   "video": null,
   "lang": null,
-  "logo": null,
+  "logo": "https://segment.com/favicon.ico",
   "publisher": "Segment Blog",
   "title": "Scaling NSQ to 750 Billion Messages",
   "url": "https://segment.com/blog/scaling-nsq"
@@ -629,7 +603,7 @@ exports['segment-academy 1'] = {
   "image": "https://www.segment.com/academy",
   "video": null,
   "lang": null,
-  "logo": null,
+  "logo": "https://www.segment.com/favicon.ico",
   "publisher": "Segment",
   "title": "When to Track on the Client vs. Server",
   "url": "https://www.segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/"
@@ -655,7 +629,7 @@ exports['silicon-beat 1'] = {
   "image": "http://www.siliconbeat.com/wp-content/uploads/2016/04/Panel.jpg",
   "video": null,
   "lang": "en",
-  "logo": null,
+  "logo": "http://www.siliconbeat.com/favicon.ico",
   "publisher": "SiliconBeat",
   "title": "VC: Time to ‘come out as a woman’",
   "url": "http://www.siliconbeat.com/2016/04/19/time-come-woman/"
@@ -663,14 +637,14 @@ exports['silicon-beat 1'] = {
 
 exports['silicon-tap 1'] = {
   "author": null,
-  "date": "2016-05-18T00:00:00.000Z",
-  "description": "San Francisco-based continuous integration software developer CircleCI says it has raised $18M in a Series B funding round, the company said this week. The funding was led by Scale Venture Partners, and al",
-  "image": "http://www.silicontap.com/images/logos/circleci.png",
+  "date": "2019-06-29T11:05:41.000Z",
+  "description": "San Francisco-based CircleCI, a developers of software used for continuous integration of code, said Thursday that it has raised $6M in a Series A funding. The funding was led by DFJ. CircleCI is led by Pa",
+  "image": "https://www.silicontap.com/images/logos/circleci.png",
   "video": null,
-  "lang": null,
-  "logo": null,
+  "lang": "en",
+  "logo": "https://www.silicontap.com/apple-touch-icon.605639ab.png",
   "publisher": "silicontap.com",
-  "title": "CircleCI Scores $18M | silicontap.com",
+  "title": "CircleCI Picks Up $6M - silicontap.com",
   "url": "https://www.silicontap.com/story/0053475.html"
 }
 
@@ -690,7 +664,7 @@ exports['silicon-valley-business-journal 1'] = {
 exports['smitten-kitchen 1'] = {
   "author": null,
   "date": "2016-05-26T00:00:00.000Z",
-  "description": "Cucumber Yogurt Raita Salad Think of this as cucumber raita with the proportions inverted -- a lot of cucumber, a smaller amount of yogurt dressing -- but it’s not overly technical, as there are ingredients here not common in raita. Notes: Feel free to play around with this salad; each seed option will provide a…",
+  "description": "Cucumber Yogurt Raita Salad Think of this as cucumber raita with the proportions inverted -- a lot of cucumber, a smaller amount of yogurt dressing -- but it’s not overly technical, as there are ingredients here not common in raita. Notes: Feel free to play around with this salad; each seed option w…",
   "image": "http://smittenkitchen.com/wp-content/uploads/cucumber-yogurt-raita-salad-300x200.jpg",
   "video": null,
   "lang": null,
@@ -715,7 +689,7 @@ exports['startup-grind 1'] = {
 
 exports['techcrunch 1'] = {
   "author": "Frederic Lardinois",
-  "date": "2016-05-24T09:30:26.000Z",
+  "date": "2016-01-12T17:00:44.000Z",
   "description": "Recruiting software engineers is a massive headache for both startups and established companies. For a while now, HackerRank has tried to make both applying..",
   "image": "https://tctechcrunch2011.files.wordpress.com/2015/08/10-interviewed.png?w=720&h=388&crop=1",
   "video": null,
@@ -729,10 +703,10 @@ exports['techcrunch 1'] = {
 exports['the-boston-globe 1'] = {
   "author": "Mike Isaac",
   "date": "2016-05-03T18:58:00.000Z",
-  "description": "Ellen Pao spent the last few years spotlighting the technology industry’s lack of diversity, in court and beyond. Erica Baker caused a stir at Google when she started a spreadsheet last year for employees to share their salaries, highlighting the pay disparities between those of different genders doing the same job.",
+  "description": "Ellen Pao spent the last few years spotlighting the technology industry’s lack of diversity, in court and beyond. Erica Baker caused a stir at Google when she started a spreadsheet last year for employees to share their salaries, highlighting the pay disparities between those of diff…",
   "image": "http://c.o0bg.com/rf/image_585w/Boston/2011-2020/2016/05/04/BostonGlobe.com/Business/Images/TECH_WOMEN_INCLUSION-6183.JPG",
   "video": null,
-  "lang": null,
+  "lang": "en",
   "logo": "https://c.o0bg.com/rw/SysConfig/WebPortal/BostonGlobe/Framework/images/bookmark-114.png",
   "publisher": "BostonGlobe.com",
   "title": "Women in Tech Band Together to Track Diversity, After Hours - The Boston Globe",
@@ -741,7 +715,7 @@ exports['the-boston-globe 1'] = {
 
 exports['the-guardian 1'] = {
   "author": "Olivia Solon",
-  "date": "2017-07-03T19:17:54.000Z",
+  "date": "2017-07-04T08:37:34.000Z",
   "description": "Judge dismisses lawsuit accusing Facebook of tracking users’ activity, saying responsibility was on plaintiffs to keep browsing history private",
   "image": "https://i.guim.co.uk/img/media/7a94153cfbe65bca1a3e7f6993b233d3c0983c36/0_533_3003_1801/master/3003.jpg?w=1200&h=630&q=55&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly91cGxvYWRzLmd1aW0uY28udWsvMjAxNi8wNS8yNS9vdmVybGF5LWxvZ28tMTIwMC05MF9vcHQucG5n&s=eaa757e2ef45d638beabf99b31e756ac",
   "video": null,
@@ -806,7 +780,7 @@ exports['twitter (tweet with image) 1'] = {
 
 exports['usa-today 1'] = {
   "author": "Editors, USA TODAY",
-  "date": "2016-05-24T16:29:19.230Z",
+  "date": "2016-05-24T16:52:12.240Z",
   "description": "Out of the loop today? We’ve got what you missed.",
   "image": "http://www.gannett-cdn.com/-mm-/b4fe31162dae4fb60b80c760486d2384a93fb163/c=0-95-1024-674&r=x633&c=1200x630/local/-/media/2016/05/24/USATODAY/USATODAY/635997039647041990-ShortList.jpg",
   "video": null,
@@ -831,8 +805,8 @@ exports['venture-beat 1'] = {
 }
 
 exports['vimeo 1'] = {
-  "author": null,
-  "date": null,
+  "author": "SUPER VERY MORE",
+  "date": "2017-12-10T07:52:19.000Z",
   "description": "- Client: OGN (CJ E&M) - Producer: Yeonjung Hong - Creative Director: Youngmin Kim - Motion Design: Youngmin Kim, Gyuhwan Yu, Dahee Ahn - Sound Design: Stone…",
   "image": "https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F613524460_1280x720.webp&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png",
   "video": null,
@@ -845,25 +819,25 @@ exports['vimeo 1'] = {
 
 exports['washington-post 1'] = {
   "author": "Abby Ohlheiser",
-  "date": "2016-05-24T02:20:00.000Z",
+  "date": "2016-05-24T18:20:48.000Z",
   "description": "Twitter announced a series of changes that will make the site easier to use.",
-  "image": "https://img.washingtonpost.com/rf/image_1484w/2010-2019/Wires/Images/2016-05-09/Getty/AFP_AD4OR.jpg",
+  "image": "https://www.washingtonpost.com/resizer/koHP6G-N-IEesDnQ2qlC-c3G7H4=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/YU7K4QHOU45NXLUUOZBD64ZCM4.jpg",
   "video": null,
   "lang": "en",
-  "logo": null,
-  "publisher": "Washington Post",
+  "logo": "https://www.washingtonpost.com/pb/resources/img/thewashingtonpost-black-400x60.png",
+  "publisher": "The Washington Post",
   "title": "Twitter says goodbye to all ‘.@’",
   "url": "https://www.washingtonpost.com/news/the-intersect/wp/2016/05/24/twitter-says-goodbye-to-all/"
 }
 
 exports['wired 1'] = {
-  "author": "Adam Rogers",
-  "date": "1707-07-13T12:00:00.000Z",
+  "author": "WIRED Staff",
+  "date": "2017-07-13T00:35:06.995Z",
   "description": "Even if climate change didn’t send Larsen C packing, the air and oceans on Earth are incontrovertibly warmer than they used to be. Could an event like this move a policy needle?",
   "image": "https://media.wired.com/photos/5966648eb07d437d51477a87/191:100/pass/LarsenC-FeatureArt.jpg",
   "video": null,
   "lang": "en",
-  "logo": null,
+  "logo": "https://www.wired.com/images/logos/article-icon.jpg",
   "publisher": "WIRED",
   "title": "Giant Antarctic Icebergs and Crushing Existential Dread",
   "url": "https://www.wired.com/story/giant-antarctic-icebergs-and-crushing-existential-dread/"
@@ -884,7 +858,7 @@ exports['wsj 1'] = {
 
 exports['xconomy 1'] = {
   "author": "Bernadette Tansey",
-  "date": "2016-05-24T12:09:41.000Z",
+  "date": "2016-05-24T13:53:41.000Z",
   "description": "Cybersecurity company Agari, which guards against hacker attacks initiated through fraudulent e-mails, announced today it has raised $22 million in a Serie",
   "image": "http://www.xconomy.com/wordpress/wp-content/images/2016/05/AgariPetersonRS.jpg",
   "video": null,
@@ -902,7 +876,7 @@ exports['yahoo-news 1'] = {
   "image": "https://s.yimg.com/ny/api/res/1.2/hnWTAtxjD0NGNLijeWWBGw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTYxNjtoPTQ2MDtzbT0xO2lsPXBsYW5l/http://media.zenfs.com/en-US/homerun/mic_26/8de763298d0eafd3534895283457892c.cf.jpg",
   "video": null,
   "lang": "en",
-  "logo": "https://www.yahoo.com/favicon.ico",
+  "logo": "https://s.yimg.com/os/mit/media/p/presentation/images/icons/win8-tile-1484740.png",
   "publisher": "Yahoo News - Latest News & Headlines",
   "title": "Justin Bieber Coldly Throws Fan’s Gift Out Car Window, Belieber Hearts Break",
   "url": "https://www.yahoo.com/news/justin-bieber-coldly-throws-fans-133800208.html"
@@ -970,8 +944,8 @@ exports['youtube channel 1'] = {
 
 exports['wikipedia 1'] = {
   "author": null,
-  "date": "2016-10-13T12:00:00.000Z",
-  "description": "Bob Dylan (/ˈdɪlən/; born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter, author, and painter, who has been an influential figure in popular music and culture for more than five decades. Much of his most celebrated work dates from the 1960s, when he became a reluctant “voice of a generation”[2] with songs such as “Blowin’ in the Wind” and “The Times They Are a-Changin’” that became anthems for the Civil Rights Movement and anti-war movement. In 1965, he controversially abandoned his early fan-base in the American folk music revival, recording a six-minute single, “Like a Rolling Stone”, which enlarged the scope of popular music.",
+  "date": "2016-10-13T00:00:00.000Z",
+  "description": "This article is about the musician. For his debut album, see Bob Dylan (album).",
   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg/1200px-Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg",
   "video": null,
   "lang": "en",
@@ -980,3 +954,69 @@ exports['wikipedia 1'] = {
   "title": "Bob Dylan - Wikipedia",
   "url": "https://en.wikipedia.org/wiki/Bob_Dylan"
 }
+
+exports['engadget 1'] = {
+  "author": null,
+  "date": "2019-01-07T15:49:36.000Z",
+  "description": "Previously, only paid subscribers had access to private repositories.",
+  "image": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D4834%252C3230%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1069%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-images%252F2019-01%252F2d1e22f0-12ae-11e9-bae7-60d640081814%26client%3Da1acac3e1b3290917d92%26signature%3D269ae0af3a1a1772ffea6759d126791b9ad25184&client=amp-blogside-v2&signature=ea8c3bcfcab1cb450830a18333e5a76988365326",
+  "video": null,
+  "lang": "en",
+  "logo": "https://s.blogsmithmedia.com/www.engadget.com/assets-h79a2a298ee2333258b2b96d407e66b8d/images/favicon-160x160.png?h=1638b0a8bbe7effa8f85c3ecabb63620",
+  "publisher": "Engadget",
+  "title": "All GitHub users can keep their code private",
+  "url": "https://www.engadget.com/2019/01/07/all-github-users-keep-code-private/"
+}
+
+exports['learnnode 1'] = {
+  "author": null,
+  "date": null,
+  "description": "A premium training course to learn to build apps with Node.js, Express, MongoDB, and friends.",
+  "image": "https://learnnode.com/images/NODE/poster.jpg",
+  "video": "https://player.vimeo.com/external/216213305.sd.mp4?s=815e208b400abe120e9b860dad68762bcf4b828a&profile_id=164",
+  "lang": null,
+  "logo": "https://learnnode.com/images/NODE/favicon.png",
+  "publisher": "Learn Node",
+  "title": "Learn Node",
+  "url": "https://learnnode.com"
+}
+
+exports['health.govt.nz 1'] = {
+  "author": null,
+  "date": "2011-04-07T00:00:00.000Z",
+  "description": "In December 2009 Cabinet agreed to strengthen the health sector’s focus on quality and safety by creating a Health Quality and Safety Commission. This regulatory impact statement considers what additional functions, powers, and funding mechanisms the Commission might need to achieve sustained qualit…",
+  "image": "https://html-microservice.herokuapp.com/sites/all/themes/mohpub_bootstrap/images/mohlogo.svg",
+  "video": null,
+  "lang": "en",
+  "logo": "https://www.health.govt.nz/sites/all/themes/mohpub_bootstrap/favicon.ico",
+  "publisher": "Ministry of Health NZ",
+  "title": "Quality Improvement Agency: Health Quality and Safety Commission: Functions, Powers and Funding",
+  "url": "https://www.health.govt.nz/about-ministry/legislation-and-regulation/regulatory-impact-statements/quality-improvement-agency-health-quality-and-safety-commission-functions-powers-and-funding"
+}
+
+exports['pikabu 1'] = {
+  "author": null,
+  "date": "2019-06-19T21:04:27.000Z",
+  "description": "Поделился пикабушник: odno.kino",
+  "image": "https://cs10.pikabu.ru/post_img/2019/06/14/8/156051367927850595.jpg",
+  "video": null,
+  "lang": "en",
+  "logo": "https://cs.pikabu.ru/mobile/img/apple-touch-icon-152x152.png",
+  "publisher": "Пикабу",
+  "title": "7 интересных наблюдений о первой Матрице",
+  "url": "https://pikabu.ru/story/7_interesnyikh_nablyudeniy_o_pervoy_matritse_6758662"
+}
+
+exports['bukvy 1'] = {
+  "author": "Буквы",
+  "date": "2019-01-06T07:43:59.000Z",
+  "description": "Президент Петр Порошенко заявил, что государство будет уважать религиозный выбор и вероисповедание каждого гражданина страны. Об этом он заявил в обращении после торжественной церемонии вручения в Стамбуле Томоса об автокефалии Православной церкви Украины. “Я как Президент гарантирую от имени госуда…",
+  "image": "https://bykvu.com/ru/kd_image_generate/141935.jpg",
+  "video": null,
+  "lang": null,
+  "logo": "https://bykvu.com/wp-content/themes/bykvu/img/apple-icon-180x180.png",
+  "publisher": "Буквы",
+  "title": "Украина будет уважать религиозный выбор каждого гражданина, – Порошенко",
+  "url": "https://bykvu.com/ru/bukvy/107312-ukraina-budet-uvazhat-religioznyj-vybor-kazhdogo-grazhdanina-poroshenko/"
+}
+

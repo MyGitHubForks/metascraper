@@ -1,11 +1,20 @@
 'use strict'
 
-const { url: urlFn, $filter, titleize } = require('@metascraper/helpers')
-const { URL } = require('url')
-const { chain } = require('lodash')
+const {
+  url,
+  $filter,
+  title,
+  author,
+  toRule,
+  lang
+} = require('@metascraper/helpers')
+
+const { getPublicSuffix } = require('tldts')
+const memoizeOne = require('memoize-one')
 
 const REGEX_AMAZON_URL = /https?:\/\/(.*amazon\..*\/.*|.*amzn\..*\/.*|.*a\.co\/.*)/i
-const isAmazonUrl = url => REGEX_AMAZON_URL.test(url)
+
+const isValidUrl = memoizeOne(url => REGEX_AMAZON_URL.test(url))
 
 const SUFFIX_LANGUAGES = {
   ca: 'en',
@@ -21,42 +30,34 @@ const SUFFIX_LANGUAGES = {
   it: 'it'
 }
 
-const getSuffix = host =>
-  chain(host)
-    .replace('www.', '')
-    .split('.')
-    .tail()
-    .join('.')
-    .value()
+const getDomainLanguage = url => SUFFIX_LANGUAGES[getPublicSuffix(url)]
 
-const getDomainLanguage = url => SUFFIX_LANGUAGES[getSuffix(new URL(url).host)]
+const toUrl = toRule(url)
+const toAuthor = toRule(author)
+const toTitle = toRule(title, { removeSeparator: false })
+const toLang = toRule(lang)
 
-const createWrap = fn => rule => ({ htmlDom, url }) => {
-  const value = isAmazonUrl(url) && rule(htmlDom)
-  return fn(url, value)
+module.exports = () => {
+  const rules = {
+    lang: [toLang(($, url) => getDomainLanguage(url))],
+    author: [
+      toAuthor($ => $('.contributorNameID').text()),
+      toAuthor($ => $('#bylineInfo').text()),
+      toAuthor($ => $('#brand').text())
+    ],
+    title: [
+      toTitle($ => $('#productTitle').text()),
+      toTitle($ => $('#btAsinTitle').text()),
+      toTitle($ => $filter($, $('h1.a-size-large'))),
+      toTitle($ => $('#item_name').text())
+    ],
+    publisher: [() => 'Amazon'],
+    image: [
+      toUrl($ => $('.a-dynamic-image').attr('data-old-hires')),
+      toUrl($ => $('.a-dynamic-image').attr('src'))
+    ]
+  }
+
+  rules.test = ({ url }) => isValidUrl(url)
+  return rules
 }
-
-const wrap = createWrap((url, value) => value)
-const wrapUrl = createWrap((url, value) => urlFn(value, { url }))
-
-module.exports = () => ({
-  lang: [
-    ({ htmlDom: $, meta, url }) => isAmazonUrl(url) && getDomainLanguage(url)
-  ],
-  author: [
-    wrap($ => titleize($('.contributorNameID').text())),
-    wrap($ => titleize($('#bylineInfo').text())),
-    wrap($ => titleize($('#brand').text()))
-  ],
-  title: [
-    wrap($ => titleize($('#productTitle').text())),
-    wrap($ => titleize($('#btAsinTitle').text())),
-    wrap($ => titleize($filter($, $('h1.a-size-large')))),
-    wrap($ => titleize($('#item_name').text()))
-  ],
-  publisher: [wrap($ => 'Amazon')],
-  image: [
-    wrapUrl($ => $('.a-dynamic-image').attr('data-old-hires')),
-    wrapUrl($ => $('.a-dynamic-image').attr('src'))
-  ]
-})

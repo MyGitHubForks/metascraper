@@ -1,5 +1,6 @@
 {
   "name": "metascraper",
+  "homepage": "https://github.com/microlinkhq/metascraper#readme",
   "version": "",
   "author": {
     "email": "ian@ianstormtaylor.com",
@@ -11,22 +12,25 @@
       "email": "josefrancisco.verdu@gmail.com"
     },
     {
-      "name": "Shawn Dempsey",
-      "email": "shwanton@gmail.com"
-    },
-    {
-      "name": "Nikola Ristic",
-      "email": "risticn6@gmail.com"
+      "name": "Wyatt Johnson",
+      "email": "wyattjoh@gmail.com"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metascraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/issues"
+  },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "browser-sync": "latest",
     "concurrently": "latest",
-    "conventional-changelog-cli": "latest",
     "eachdir": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
-    "git-dirty": "latest",
     "got": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -34,57 +38,56 @@
     "gulp-cssnano": "latest",
     "gulp-strip-css-comments": "latest",
     "gulp-uglify": "latest",
-    "html-metadata": "latest",
     "husky": "latest",
-    "json-future": "latest",
     "lerna": "latest",
     "lint-staged": "latest",
     "mkdirp": "latest",
-    "node-metainspector": "latest",
     "npm-check-updates": "latest",
-    "open-graph-scraper": "latest",
     "prettier-standard": "latest",
     "rimraf": "latest",
-    "standard": "11",
-    "standard-markdown": "latest",
-    "unfluff": "latest"
+    "standard": "latest",
+    "standard-markdown": "latest"
   },
   "engines": {
     "node": ">= 8"
   },
   "scripts": {
-    "authors": "git-authors-cli && finepack package.json",
-    "authors:commit": "npm run authors && git add package.sjon && git commit -m 'Update contributors' && git push origin master",
     "build": "gulp build",
-    "changelog": "conventional-changelog --release-count=0 > CHANGELOG.md",
-    "changelog:commit": "npm run changelog && git add CHANGELOG.md && git commit -m 'Update Changelog' && git push origin master",
-    "clean": "rm -rf node_modules && cd packages && eachdir rm -rf node_modules",
-    "dev": "concurrently \"gulp\" \"npm run server:dev\"",
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "contributors": "(lerna exec finepack --parallel && git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
+    "coverage": "lerna exec npm run coverage --parallel --scope \"metascraper\"",
+    "dev": "concurrently \"gulp\" \"npm run dev:server\"",
+    "dev:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
+    "install": "lerna bootstrap --no-ci --force-local",
     "lint": "standard-markdown README.md && standard",
-    "postinstall": "lerna bootstrap",
-    "precommit": "lint-staged",
+    "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
-    "pretty": "prettier-standard index.js {test,src}/**/*.js --single-quote",
-    "publish": "npm run upgrade && lerna publish --sort && npm run authors:commit && npm run changelog:commit",
-    "server:dev": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
+    "release": "lerna publish --yes --sort --conventional-commits -m \"chore(release): %s\" --create-release github",
     "test": "lerna exec npm run test",
-    "upgrade": "lerna exec ncu --  --error-level 2"
+    "update": "lerna exec ncu -- --upgrade && ncu -- --upgrade",
+    "update:check": "lerna exec ncu -- --error-level 2 && ncu -- --error-level 2"
   },
   "private": true,
   "license": "MIT",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "prettier-standard",
-        "git add"
-      ],
-      "package.json": [
-        "finepack",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "static/*.{js, css}"
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ],
+    "package.json": [
+      "finepack",
+      "git add"
     ]
   },
   "standard": {

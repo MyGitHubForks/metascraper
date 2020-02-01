@@ -1,5 +1,781 @@
-##  (2018-09-09)
+# Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [5.7.21](https://github.com/microlinkhq/metascraper/compare/v5.7.20...v5.7.21) (2019-11-08)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.20](https://github.com/microlinkhq/metascraper/compare/v5.7.19...v5.7.20) (2019-11-07)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.19](https://github.com/microlinkhq/metascraper/compare/v5.7.18...v5.7.19) (2019-11-07)
+
+
+### Bug Fixes
+
+* compose absolute url properly ([17b55ca](https://github.com/microlinkhq/metascraper/commit/17b55cabf06f95f1aef9bce305cafba623b811e8))
+* remove only ([a81002c](https://github.com/microlinkhq/metascraper/commit/a81002cd76748bf6603c75318e2616b856557d56))
+
+
+
+
+
+## [5.7.18](https://github.com/microlinkhq/metascraper/compare/v5.7.17...v5.7.18) (2019-11-07)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.17](https://github.com/microlinkhq/metascraper/compare/v5.7.16...v5.7.17) (2019-10-29)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.16](https://github.com/microlinkhq/metascraper/compare/v5.7.15...v5.7.16) (2019-10-26)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.15](https://github.com/microlinkhq/metascraper/compare/v5.7.14...v5.7.15) (2019-10-24)
+
+
+### Bug Fixes
+
+* retry ([b768aa1](https://github.com/microlinkhq/metascraper/commit/b768aa15a589ba2da54267c3e4f0f60a455d90f6))
+
+
+
+
+
+## [5.7.14](https://github.com/microlinkhq/metascraper/compare/v5.7.13...v5.7.14) (2019-10-24)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.13](https://github.com/microlinkhq/metascraper/compare/v5.7.12...v5.7.13) (2019-10-23)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.12](https://github.com/microlinkhq/metascraper/compare/v5.7.11...v5.7.12) (2019-10-20)
+
+
+### Bug Fixes
+
+* use undefined ([ae693e3](https://github.com/microlinkhq/metascraper/commit/ae693e3))
+
+
+
+
+
+## [5.7.11](https://github.com/microlinkhq/metascraper/compare/v5.7.10...v5.7.11) (2019-10-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.10](https://github.com/microlinkhq/metascraper/compare/v5.7.9...v5.7.10) (2019-10-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.9](https://github.com/microlinkhq/metascraper/compare/v5.7.8...v5.7.9) (2019-10-18)
+
+
+### Bug Fixes
+
+* missing await ([7fbd220](https://github.com/microlinkhq/metascraper/commit/7fbd220))
+
+
+
+
+
+## [5.7.8](https://github.com/microlinkhq/metascraper/compare/v5.7.7...v5.7.8) (2019-10-18)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.7](https://github.com/microlinkhq/metascraper/compare/v5.7.6...v5.7.7) (2019-10-17)
+
+
+### Bug Fixes
+
+* condition under no tunnel ([a1866f1](https://github.com/microlinkhq/metascraper/commit/a1866f1))
+* don't loop if max tunnel size is reached ([3a014f4](https://github.com/microlinkhq/metascraper/commit/3a014f4))
+
+
+
+
+
+## [5.7.6](https://github.com/microlinkhq/metascraper/compare/v5.7.5...v5.7.6) (2019-09-29)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.5](https://github.com/microlinkhq/metascraper/compare/v5.7.4...v5.7.5) (2019-09-23)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.4](https://github.com/microlinkhq/metascraper/compare/v5.7.3...v5.7.4) (2019-09-13)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.3](https://github.com/microlinkhq/metascraper/compare/v5.7.2...v5.7.3) (2019-09-13)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.2](https://github.com/microlinkhq/metascraper/compare/v5.7.1...v5.7.2) (2019-09-12)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.7.1](https://github.com/microlinkhq/metascraper/compare/v5.7.0...v5.7.1) (2019-09-12)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+# [5.7.0](https://github.com/microlinkhq/metascraper/compare/v5.6.8...v5.7.0) (2019-09-12)
+
+
+### Features
+
+* fixes [#207](https://github.com/microlinkhq/metascraper/issues/207): parse multiple json-ld blocks ([#208](https://github.com/microlinkhq/metascraper/issues/208)) ([0c8ee94](https://github.com/microlinkhq/metascraper/commit/0c8ee94))
+
+
+
+
+
+## [5.6.8](https://github.com/microlinkhq/metascraper/compare/v5.6.7...v5.6.8) (2019-08-30)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.7](https://github.com/microlinkhq/metascraper/compare/v5.6.6...v5.6.7) (2019-08-30)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.6](https://github.com/microlinkhq/metascraper/compare/v5.6.5...v5.6.6) (2019-08-22)
+
+
+### Bug Fixes
+
+* linter ([ef3c6ed](https://github.com/microlinkhq/metascraper/commit/ef3c6ed))
+
+
+
+
+
+## [5.6.5](https://github.com/microlinkhq/metascraper/compare/v5.6.4...v5.6.5) (2019-08-01)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.4](https://github.com/microlinkhq/metascraper/compare/v5.6.3...v5.6.4) (2019-08-01)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.3](https://github.com/microlinkhq/metascraper/compare/v5.6.2...v5.6.3) (2019-07-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.2](https://github.com/microlinkhq/metascraper/compare/v5.6.1...v5.6.2) (2019-07-12)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.6.1](https://github.com/microlinkhq/metascraper/compare/v5.6.0...v5.6.1) (2019-07-10)
+
+
+### Bug Fixes
+
+* value detection ([#190](https://github.com/microlinkhq/metascraper/issues/190)) ([db84e16](https://github.com/microlinkhq/metascraper/commit/db84e16))
+
+
+
+
+
+# [5.6.0](https://github.com/microlinkhq/metascraper/compare/v5.5.4...v5.6.0) (2019-07-10)
+
+
+### Features
+
+* add test function to rules bundle ([#189](https://github.com/microlinkhq/metascraper/issues/189)) ([7c209e9](https://github.com/microlinkhq/metascraper/commit/7c209e9)), closes [#184](https://github.com/microlinkhq/metascraper/issues/184)
+
+
+
+
+
+## [5.5.4](https://github.com/microlinkhq/metascraper/compare/v5.5.3...v5.5.4) (2019-07-04)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.5.3](https://github.com/microlinkhq/metascraper/compare/v5.5.2...v5.5.3) (2019-06-29)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.5.2](https://github.com/microlinkhq/metascraper/compare/v5.5.1...v5.5.2) (2019-06-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.5.1](https://github.com/microlinkhq/metascraper/compare/v5.5.0...v5.5.1) (2019-06-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+# [5.5.0](https://github.com/microlinkhq/metascraper/compare/v5.4.7...v5.5.0) (2019-06-20)
+
+
+### Features
+
+* add metascraper-uol ([#183](https://github.com/microlinkhq/metascraper/issues/183)) ([2a06b1d](https://github.com/microlinkhq/metascraper/commit/2a06b1d))
+
+
+
+
+
+## [5.4.7](https://github.com/microlinkhq/metascraper/compare/v5.4.6...v5.4.7) (2019-06-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.4.6](https://github.com/microlinkhq/metascraper/compare/v5.4.5...v5.4.6) (2019-06-19)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.4.5](https://github.com/microlinkhq/metascraper/compare/v5.4.4...v5.4.5) (2019-06-19)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.4.4](https://github.com/microlinkhq/metascraper/compare/v5.4.3...v5.4.4) (2019-06-14)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.4.3](https://github.com/microlinkhq/metascraper/compare/v5.4.2...v5.4.3) (2019-06-12)
+
+
+### Bug Fixes
+
+* only use entry-title selector when only one entry-title exists ([#178](https://github.com/microlinkhq/metascraper/issues/178)) ([83aec6f](https://github.com/microlinkhq/metascraper/commit/83aec6f))
+
+
+
+
+
+## [5.4.2](https://github.com/microlinkhq/metascraper/compare/v5.4.1...v5.4.2) (2019-06-05)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.4.1](https://github.com/microlinkhq/metascraper/compare/v5.4.0...v5.4.1) (2019-06-05)
+
+
+### Bug Fixes
+
+* ensure value exist ([3132a92](https://github.com/microlinkhq/metascraper/commit/3132a92))
+
+
+
+
+
+## [5.3.4](https://github.com/microlinkhq/metascraper/compare/v5.3.3...v5.3.4) (2019-05-30)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.3.3](https://github.com/microlinkhq/metascraper/compare/v5.3.2...v5.3.3) (2019-05-28)
+
+
+### Bug Fixes
+
+* ensure to access just if exist ([#174](https://github.com/microlinkhq/metascraper/issues/174)) ([9350086](https://github.com/microlinkhq/metascraper/commit/9350086))
+
+
+
+
+
+## [5.3.2](https://github.com/microlinkhq/metascraper/compare/v5.3.1...v5.3.2) (2019-05-20)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.3.1](https://github.com/microlinkhq/metascraper/compare/v5.3.0...v5.3.1) (2019-05-17)
+
+
+### Bug Fixes
+
+* count ([bb12aaf](https://github.com/microlinkhq/metascraper/commit/bb12aaf))
+
+
+
+
+
+## [5.2.4](https://github.com/microlinkhq/metascraper/compare/v5.2.3...v5.2.4) (2019-05-07)
+
+
+### Bug Fixes
+
+* gif as image format ([#171](https://github.com/microlinkhq/metascraper/issues/171)) ([1fbdae2](https://github.com/microlinkhq/metascraper/commit/1fbdae2))
+
+
+
+
+
+## [5.2.3](https://github.com/microlinkhq/metascraper/compare/v5.2.2...v5.2.3) (2019-05-05)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [5.2.2](https://github.com/microlinkhq/metascraper/compare/v5.2.1...v5.2.2) (2019-05-05)
+
+
+### Bug Fixes
+
+* resolve collection of objects ([d2b2b45](https://github.com/microlinkhq/metascraper/commit/d2b2b45))
+
+
+
+
+
+## [5.2.1](https://github.com/microlinkhq/metascraper/compare/v5.2.0...v5.2.1) (2019-05-05)
+
+
+### Bug Fixes
+
+* ensure to escape values in a collection ([e65ffec](https://github.com/microlinkhq/metascraper/commit/e65ffec))
+
+
+
+
+
+## [5.1.1](https://github.com/microlinkhq/metascraper/compare/v5.1.0...v5.1.1) (2019-04-04)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+# [5.1.0](https://github.com/microlinkhq/metascraper/compare/v5.0.2...v5.1.0) (2019-04-03)
+
+
+### Features
+
+* add inline rules at the end ([#163](https://github.com/microlinkhq/metascraper/issues/163)) ([936749a](https://github.com/microlinkhq/metascraper/commit/936749a))
+
+
+
+
+
+## [5.0.2](https://github.com/microlinkhq/metascraper/compare/v5.0.1...v5.0.2) (2019-03-31)
+
+
+### Bug Fixes
+
+* ensure external requests has early timeout ([#162](https://github.com/microlinkhq/metascraper/issues/162)) ([f7a7816](https://github.com/microlinkhq/metascraper/commit/f7a7816))
+
+
+
+
+
+## [5.0.1](https://github.com/microlinkhq/metascraper/compare/v5.0.0...v5.0.1) (2019-03-17)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+# [5.0.0](https://github.com/microlinkhq/metascraper/compare/v4.10.3...v5.0.0) (2019-03-17)
+
+
+### Features
+
+* reduce rules on parallel ([#157](https://github.com/microlinkhq/metascraper/issues/157)) ([bce6eb5](https://github.com/microlinkhq/metascraper/commit/bce6eb5))
+
+
+### BREAKING CHANGES
+
+* 'meta' can't be passed as shared resource
+
+* build: deprecated lang-detector
+
+
+
+
+
+## [4.10.3](https://github.com/microlinkhq/metascraper/compare/v4.10.2...v4.10.3) (2019-03-17)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [4.10.2](https://github.com/microlinkhq/metascraper/compare/v4.10.1...v4.10.2) (2019-03-16)
+
+
+### Bug Fixes
+
+* add author size limitation ([#154](https://github.com/microlinkhq/metascraper/issues/154)) ([c1df0d3](https://github.com/microlinkhq/metascraper/commit/c1df0d3))
+
+
+
+
+
+## [4.10.1](https://github.com/microlinkhq/metascraper/compare/v4.10.0...v4.10.1) (2019-01-25)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+# [4.10.0](https://github.com/microlinkhq/metascraper/compare/v4.9.0...v4.10.0) (2019-01-13)
+
+
+### Features
+
+* remove unnecessary dependency ([8dbb1ac](https://github.com/microlinkhq/metascraper/commit/8dbb1ac))
+
+
+
+
+
+## [4.8.5](https://github.com/microlinkhq/metascraper/compare/v4.8.4...v4.8.5) (2018-12-25)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [4.8.4](https://github.com/microlinkhq/metascraper/compare/v4.8.3...v4.8.4) (2018-12-16)
+
+
+### Bug Fixes
+
+* avoid use generic publisher ([#141](https://github.com/microlinkhq/metascraper/issues/141)) ([c13f833](https://github.com/microlinkhq/metascraper/commit/c13f833))
+
+
+
+
+
+## [4.8.3](https://github.com/microlinkhq/metascraper/compare/v4.8.2...v4.8.3) (2018-12-15)
+
+**Note:** Version bump only for package metascraper
+
+
+
+
+
+## [4.8.2](https://github.com/microlinkhq/metascraper/compare/v4.8.1...v4.8.2) (2018-12-12)
+
+
+### Bug Fixes
+
+* ensure buffer has enough space ([#136](https://github.com/microlinkhq/metascraper/issues/136)) ([8bd7be3](https://github.com/microlinkhq/metascraper/commit/8bd7be3)), closes [#issuecomment-253184229](https://github.com/microlinkhq/metascraper/issues/issuecomment-253184229)
+
+
+
+
+
+## [4.8.1](https://github.com/microlinkhq/metascraper/compare/v4.8.0...v4.8.1) (2018-12-07)
+
+
+### Bug Fixes
+
+* use agent for Twitter request ([#135](https://github.com/microlinkhq/metascraper/issues/135)) ([ed3e1a2](https://github.com/microlinkhq/metascraper/commit/ed3e1a2))
+
+
+
+
+
+# [4.8.0](https://github.com/microlinkhq/metascraper/compare/v4.7.0...v4.8.0) (2018-11-19)
+
+
+### Features
+
+* fulfilled twitter promise ([#133](https://github.com/microlinkhq/metascraper/issues/133)) ([5e89fe5](https://github.com/microlinkhq/metascraper/commit/5e89fe5))
+
+
+
+
+
+##  (2018-11-16)
+
+
+
+
+## 4.7.0 (2018-11-16)
+
+* Update dependencies (#132) ([a256f0c](https://github.com/microlinkhq/metascraper/commit/a256f0c)), closes [#132](https://github.com/microlinkhq/metascraper/issues/132)
+* v4.7.0 ([a7d53da](https://github.com/microlinkhq/metascraper/commit/a7d53da))
+* fix: reset token every 10min ([cf8cd92](https://github.com/microlinkhq/metascraper/commit/cf8cd92))
+
+
+
+## <small>4.6.1 (2018-10-28)</small>
+
+* v4.6.1 ([dc664c3](https://github.com/microlinkhq/metascraper/commit/dc664c3))
+* fix: use `onError` for capture error (#130) ([dcf9e23](https://github.com/microlinkhq/metascraper/commit/dcf9e23)), closes [#130](https://github.com/microlinkhq/metascraper/issues/130)
+
+
+
+## 4.6.0 (2018-10-24)
+
+* v4.6.0 ([0ef7ad5](https://github.com/microlinkhq/metascraper/commit/0ef7ad5))
+* feat: get language from twitter payload (#129) ([80d5ddf](https://github.com/microlinkhq/metascraper/commit/80d5ddf)), closes [#129](https://github.com/microlinkhq/metascraper/issues/129)
+
+
+
+## <small>4.5.6 (2018-10-23)</small>
+
+* v4.5.6 ([e90bb13](https://github.com/microlinkhq/metascraper/commit/e90bb13))
+* fix: add proxy support at youtube-dl ([c2c0fea](https://github.com/microlinkhq/metascraper/commit/c2c0fea))
+* fix: iterate over new formats detected ([14db749](https://github.com/microlinkhq/metascraper/commit/14db749))
+
+
+
+## <small>4.5.5 (2018-10-21)</small>
+
+* v4.5.5 ([679424c](https://github.com/microlinkhq/metascraper/commit/679424c))
+* build: setup conventional workflow ([b3e0a9e](https://github.com/microlinkhq/metascraper/commit/b3e0a9e))
+
+
+
+## <small>4.5.5-alpha.0 (2018-10-21)</small>
+
+* Update Changelog ([5107f87](https://github.com/microlinkhq/metascraper/commit/5107f87))
+* v4.5.5-alpha.0 ([a9acb05](https://github.com/microlinkhq/metascraper/commit/a9acb05))
+* build: add automate-release workflow ([a6b0493](https://github.com/microlinkhq/metascraper/commit/a6b0493))
+* build: update dependencies ([8597ea7](https://github.com/microlinkhq/metascraper/commit/8597ea7))
+
+
+
+## <small>4.5.4 (2018-10-17)</small>
+
+* Prefer mp4 video if it is available (#127) ([2d92376](https://github.com/microlinkhq/metascraper/commit/2d92376)), closes [#127](https://github.com/microlinkhq/metascraper/issues/127)
+* Update Changelog ([b8d5445](https://github.com/microlinkhq/metascraper/commit/b8d5445))
+* v4.5.4 ([5fc2f5c](https://github.com/microlinkhq/metascraper/commit/5fc2f5c))
+
+
+
+## <small>4.5.3 (2018-10-11)</small>
+
+* Get original tweet id ([ac7e5e9](https://github.com/microlinkhq/metascraper/commit/ac7e5e9))
+* Update Changelog ([f8167ed](https://github.com/microlinkhq/metascraper/commit/f8167ed))
+* v4.5.3 ([e01b4b2](https://github.com/microlinkhq/metascraper/commit/e01b4b2))
+
+
+
+## <small>4.5.2 (2018-10-05)</small>
+
+* Add tunnel support (#124) ([084e9e6](https://github.com/microlinkhq/metascraper/commit/084e9e6)), closes [#124](https://github.com/microlinkhq/metascraper/issues/124)
+* Update Changelog ([1319563](https://github.com/microlinkhq/metascraper/commit/1319563))
+* v4.5.2 ([29bcc2c](https://github.com/microlinkhq/metascraper/commit/29bcc2c))
+
+
+
+## <small>4.5.1 (2018-10-04)</small>
+
+* Revert "Avoid use Twitter API (#122)" ([66ca721](https://github.com/microlinkhq/metascraper/commit/66ca721)), closes [#122](https://github.com/microlinkhq/metascraper/issues/122)
+* Update Changelog ([6481681](https://github.com/microlinkhq/metascraper/commit/6481681))
+* v4.5.1 ([af004a4](https://github.com/microlinkhq/metascraper/commit/af004a4))
+
+
+
+## 4.5.0 (2018-09-30)
+
+* Refactor tests ([b9d4c5f](https://github.com/microlinkhq/metascraper/commit/b9d4c5f))
+* Update Changelog ([024d5f3](https://github.com/microlinkhq/metascraper/commit/024d5f3))
+* Use prerender for extracting HTML ([4b6c034](https://github.com/microlinkhq/metascraper/commit/4b6c034))
+* v4.5.0 ([3c6970b](https://github.com/microlinkhq/metascraper/commit/3c6970b))
+
+
+
+## <small>4.4.4 (2018-09-29)</small>
+
+* Avoid use Twitter API (#122) ([71c7071](https://github.com/microlinkhq/metascraper/commit/71c7071)), closes [#122](https://github.com/microlinkhq/metascraper/issues/122) [/github.com/loklak/loklak_server/blob/7c513ae7949718399a7cf06bb19e80da362ef396/src/org/loklak/harvester/TwitterScraper.java#L486-L506](https://github.com//github.com/loklak/loklak_server/blob/7c513ae7949718399a7cf06bb19e80da362ef396/src/org/loklak/harvester/TwitterScraper.java/issues/L486-L506)
+* Update Changelog ([3b581b6](https://github.com/microlinkhq/metascraper/commit/3b581b6))
+* v4.4.4 ([fd0c0a9](https://github.com/microlinkhq/metascraper/commit/fd0c0a9))
+
+
+
+## <small>4.4.3 (2018-09-26)</small>
+
+* Disable retry ([5dc9c54](https://github.com/microlinkhq/metascraper/commit/5dc9c54))
+* Update Changelog ([65de378](https://github.com/microlinkhq/metascraper/commit/65de378))
+* Update rate limit window ([82b1218](https://github.com/microlinkhq/metascraper/commit/82b1218))
+* v4.4.3 ([8ecb4f5](https://github.com/microlinkhq/metascraper/commit/8ecb4f5))
+
+
+
+## <small>4.4.2 (2018-09-21)</small>
+
+* Update Changelog ([82e44fa](https://github.com/microlinkhq/metascraper/commit/82e44fa))
+* Update limit rates ([d7d0052](https://github.com/microlinkhq/metascraper/commit/d7d0052))
+* v4.4.2 ([f6df434](https://github.com/microlinkhq/metascraper/commit/f6df434))
+
+
+
+## <small>4.4.1 (2018-09-20)</small>
+
+* Refresh token after expiration ([c99b57b](https://github.com/microlinkhq/metascraper/commit/c99b57b))
+* v4.4.1 ([817663a](https://github.com/microlinkhq/metascraper/commit/817663a))
+
+
+
+## 4.4.0 (2018-09-19)
+
+* Move memoize token into an external dependency (#120) ([96b3bcc](https://github.com/microlinkhq/metascraper/commit/96b3bcc)), closes [#120](https://github.com/microlinkhq/metascraper/issues/120)
+* Update Changelog ([32fc3dd](https://github.com/microlinkhq/metascraper/commit/32fc3dd))
+* Update scripts ([c64a111](https://github.com/microlinkhq/metascraper/commit/c64a111))
+* v4.4.0 ([933b562](https://github.com/microlinkhq/metascraper/commit/933b562))
+
+
+
+## <small>4.3.6 (2018-09-19)</small>
+
+* Add memoize for successive API calls (#119) ([d615b36](https://github.com/microlinkhq/metascraper/commit/d615b36)), closes [#119](https://github.com/microlinkhq/metascraper/issues/119)
+* Update Changelog ([d4cf08b](https://github.com/microlinkhq/metascraper/commit/d4cf08b))
+* Update contributors ([ad4468c](https://github.com/microlinkhq/metascraper/commit/ad4468c))
+* Update scripts ([760657b](https://github.com/microlinkhq/metascraper/commit/760657b))
+* v4.3.6 ([4bc9178](https://github.com/microlinkhq/metascraper/commit/4bc9178))
+
+
+
+## <small>4.3.5 (2018-09-18)</small>
+
+* Throw qualified errors (#118) ([efe7710](https://github.com/microlinkhq/metascraper/commit/efe7710)), closes [#118](https://github.com/microlinkhq/metascraper/issues/118)
+* Update Changelog ([6639bdb](https://github.com/microlinkhq/metascraper/commit/6639bdb))
+* Update dependencies ([795aeb5](https://github.com/microlinkhq/metascraper/commit/795aeb5))
+* v4.3.5 ([049ef06](https://github.com/microlinkhq/metascraper/commit/049ef06))
+
+
+
+## <small>4.3.4 (2018-09-15)</small>
+
+* Fix lint ([395c98c](https://github.com/microlinkhq/metascraper/commit/395c98c))
+* Only get video from tweets urls from Twitter ([1313fd7](https://github.com/microlinkhq/metascraper/commit/1313fd7))
+* Update Changelog ([0f84e19](https://github.com/microlinkhq/metascraper/commit/0f84e19))
+* v4.3.4 ([82a5abf](https://github.com/microlinkhq/metascraper/commit/82a5abf))
 
 
 
@@ -55,10 +831,10 @@
 * Add audio support ([9f09429](https://github.com/microlinkhq/metascraper/commit/9f09429))
 * Fix tests ([00584d3](https://github.com/microlinkhq/metascraper/commit/00584d3))
 * Fix tests ([6fd95b4](https://github.com/microlinkhq/metascraper/commit/6fd95b4))
-* Lock standard version ([b61e68d](https://github.com/microlinkhq/metascraper/commit/b61e68d))
 * Lock standard version ([82c6108](https://github.com/microlinkhq/metascraper/commit/82c6108))
-* Move helpers method into helpers package ([a807b70](https://github.com/microlinkhq/metascraper/commit/a807b70))
+* Lock standard version ([b61e68d](https://github.com/microlinkhq/metascraper/commit/b61e68d))
 * Move helpers method into helpers package ([b845f45](https://github.com/microlinkhq/metascraper/commit/b845f45))
+* Move helpers method into helpers package ([a807b70](https://github.com/microlinkhq/metascraper/commit/a807b70))
 * Remove unnecesary test ([fe3efa6](https://github.com/microlinkhq/metascraper/commit/fe3efa6))
 * Remove unnecesary test ([153f5d1](https://github.com/microlinkhq/metascraper/commit/153f5d1))
 * Rename video-provider → media-provider ([2838e12](https://github.com/microlinkhq/metascraper/commit/2838e12))
@@ -67,15 +843,15 @@
 * Return a collection of urls ([9ffcd67](https://github.com/microlinkhq/metascraper/commit/9ffcd67))
 * Strict url validation ([edfb8a0](https://github.com/microlinkhq/metascraper/commit/edfb8a0))
 * Strict url validation ([b63564f](https://github.com/microlinkhq/metascraper/commit/b63564f))
-* Tweaks ([99a52ef](https://github.com/microlinkhq/metascraper/commit/99a52ef))
 * Tweaks ([10faffd](https://github.com/microlinkhq/metascraper/commit/10faffd))
+* Tweaks ([99a52ef](https://github.com/microlinkhq/metascraper/commit/99a52ef))
 * Update Changelog ([4ddd209](https://github.com/microlinkhq/metascraper/commit/4ddd209))
 * Update dependencies (#112) ([4ecf92d](https://github.com/microlinkhq/metascraper/commit/4ecf92d)), closes [#112](https://github.com/microlinkhq/metascraper/issues/112)
 * v4.1.0 ([6b08dfa](https://github.com/microlinkhq/metascraper/commit/6b08dfa))
-* Video is a collection ([19405c2](https://github.com/microlinkhq/metascraper/commit/19405c2))
 * Video is a collection ([97fcfae](https://github.com/microlinkhq/metascraper/commit/97fcfae))
-* video is string ([41e5806](https://github.com/microlinkhq/metascraper/commit/41e5806))
+* Video is a collection ([19405c2](https://github.com/microlinkhq/metascraper/commit/19405c2))
 * video is string ([1e3227b](https://github.com/microlinkhq/metascraper/commit/1e3227b))
+* video is string ([41e5806](https://github.com/microlinkhq/metascraper/commit/41e5806))
 
 
 
@@ -520,8 +1296,8 @@
 * Update ([d246295](https://github.com/microlinkhq/metascraper/commit/d246295))
 * Update README.md ([c8609cd](https://github.com/microlinkhq/metascraper/commit/c8609cd))
 * Update scripts ([8b158e0](https://github.com/microlinkhq/metascraper/commit/8b158e0))
-* Update testing setup ([d75c74f](https://github.com/microlinkhq/metascraper/commit/d75c74f))
 * Update testing setup ([ba6253c](https://github.com/microlinkhq/metascraper/commit/ba6253c))
+* Update testing setup ([d75c74f](https://github.com/microlinkhq/metascraper/commit/d75c74f))
 * Update toc ([853f8d3](https://github.com/microlinkhq/metascraper/commit/853f8d3))
 * v3.5.0 ([88a1e6f](https://github.com/microlinkhq/metascraper/commit/88a1e6f))
 
@@ -690,23 +1466,23 @@
 * Fix author ([65de0ce](https://github.com/microlinkhq/metascraper/commit/65de0ce))
 * Fix output date ([6c572f9](https://github.com/microlinkhq/metascraper/commit/6c572f9))
 * Fix output dates ([5bf8d93](https://github.com/microlinkhq/metascraper/commit/5bf8d93))
-* Fix test ([6149cde](https://github.com/microlinkhq/metascraper/commit/6149cde))
-* Fix test ([7039590](https://github.com/microlinkhq/metascraper/commit/7039590))
 * Fix test ([3b04f96](https://github.com/microlinkhq/metascraper/commit/3b04f96))
 * Fix test ([f58cccd](https://github.com/microlinkhq/metascraper/commit/f58cccd))
+* Fix test ([6149cde](https://github.com/microlinkhq/metascraper/commit/6149cde))
+* Fix test ([7039590](https://github.com/microlinkhq/metascraper/commit/7039590))
 * Fix typo ([e2138bd](https://github.com/microlinkhq/metascraper/commit/e2138bd))
 * Improve author connector ([a8ae1aa](https://github.com/microlinkhq/metascraper/commit/a8ae1aa))
 * Improve docs ([9676b93](https://github.com/microlinkhq/metascraper/commit/9676b93))
 * Improve get url value ([5020eb5](https://github.com/microlinkhq/metascraper/commit/5020eb5))
-* Improve logo detection ([64d439a](https://github.com/microlinkhq/metascraper/commit/64d439a))
 * Improve logo detection ([3040379](https://github.com/microlinkhq/metascraper/commit/3040379))
+* Improve logo detection ([64d439a](https://github.com/microlinkhq/metascraper/commit/64d439a))
 * Merge favicon into logo ([d2d66fb](https://github.com/microlinkhq/metascraper/commit/d2d66fb))
 * Merge props correctly ([32b9610](https://github.com/microlinkhq/metascraper/commit/32b9610))
 * Migrate from gitlab to travis ([6e6f70a](https://github.com/microlinkhq/metascraper/commit/6e6f70a))
 * Pretty ([1892ea5](https://github.com/microlinkhq/metascraper/commit/1892ea5))
 * Publisher refactor ([76bb282](https://github.com/microlinkhq/metascraper/commit/76bb282))
-* Refactor ([cef0f1e](https://github.com/microlinkhq/metascraper/commit/cef0f1e))
 * Refactor ([e9df18f](https://github.com/microlinkhq/metascraper/commit/e9df18f))
+* Refactor ([cef0f1e](https://github.com/microlinkhq/metascraper/commit/cef0f1e))
 * Refactor ([20eee39](https://github.com/microlinkhq/metascraper/commit/20eee39))
 * Refactor author ([760b503](https://github.com/microlinkhq/metascraper/commit/760b503))
 * Refactor date ([ae355f3](https://github.com/microlinkhq/metascraper/commit/ae355f3))
@@ -742,6 +1518,3 @@
 * Use mocha for testing ([07967ca](https://github.com/microlinkhq/metascraper/commit/07967ca))
 * WIP ([e3120a2](https://github.com/microlinkhq/metascraper/commit/e3120a2))
 * docs(readme): add Greenkeeper badge ([5e92ea7](https://github.com/microlinkhq/metascraper/commit/5e92ea7))
-
-
-

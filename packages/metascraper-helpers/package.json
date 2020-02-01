@@ -1,9 +1,9 @@
 {
   "name": "@metascraper/helpers",
   "description": "Collection of helper functions used by metascraper",
-  "homepage": "https://metascraper.js.org",
-  "version": "4.3.2",
-  "main": "src/index.js",
+  "homepage": "https://nicedoc.io/microlinkhq/metascraper/packages/metascraper-helpers",
+  "version": "5.7.21",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-helpers"
@@ -11,28 +11,38 @@
   "bugs": {
     "url": "https://github.com/microlinkhq/metascraper/issues"
   },
+  "keywords": [
+    "helpers",
+    "metascraper"
+  ],
   "dependencies": {
     "audio-extensions": "0.0.0",
-    "chrono-node": "~1.3.5",
-    "condense-whitespace": "~1.0.0",
+    "chrono-node": "~1.3.11",
+    "condense-whitespace": "~2.0.0",
+    "entities": "~2.0.0",
     "file-extension": "~4.0.5",
+    "has-values": "~2.0.1",
     "image-extensions": "~1.1.0",
-    "is-relative-url": "~2.0.0",
-    "iso-639-3": "~1.1.0",
+    "is-relative-url": "~3.0.0",
+    "is-uri": "~1.2.0",
+    "iso-639-3": "~1.2.0",
     "isostring": "0.0.1",
-    "lodash": "~4.17.10",
-    "mime-types": "~2.1.20",
-    "normalize-url": "~3.3.0",
+    "lodash": "~4.17.15",
+    "memoize-one": "~5.1.1",
+    "mime-types": "~2.1.24",
+    "normalize-url": "~4.5.0",
     "smartquotes": "~2.3.1",
-    "title": "~3.3.2",
-    "url-regex": "~4.1.1",
+    "title": "~3.4.1",
+    "truncate": "~2.1.0",
+    "url-regex": "~5.0.0",
     "video-extensions": "~1.1.0"
   },
   "devDependencies": {
+    "cheerio": "latest",
     "mocha": "latest",
-    "nyc": "latest",
     "should": "latest",
-    "standard": "11"
+    "snap-shot": "latest",
+    "standard": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -41,12 +51,12 @@
     "index.js"
   ],
   "scripts": {
-    "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test nyc mocha test"
+    "test": "NODE_PATH=.. TZ=UTC NODE_ENV=test mocha test"
   },
+  "license": "MIT",
   "standard": {
     "env": [
       "mocha"
     ]
-  },
-  "license": "MIT"
+  }
 }

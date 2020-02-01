@@ -6,11 +6,13 @@
 </h1>
 
 ![Last version](https://img.shields.io/github/tag/microlinkhq/metascraper.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/microlinkhq/metascraper/master.svg?style=flat-square)](https://travis-ci.org/microlinkhq/metascraper)
+[![Coverage Status](https://img.shields.io/coveralls/microlinkhq/metascraper.svg?style=flat-square)](https://coveralls.io/github/microlinkhq/metascraper)
+[![Build Status](https://img.shields.io/travis/com/microlinkhq/metascraper/master.svg?style=flat-square)](https://travis-ci.com/microlinkhq/metascraper)
 [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper)
 [![NPM Status](https://img.shields.io/npm/dm/metascraper.svg?style=flat-square)](https://www.npmjs.org/package/metascraper)
 
-> A library to easily scrape metadata from an article on the web using Open Graph metadata, regular HTML metadata, and series of fallbacks.
+
+> A library to easily scrape metadata from an article on the web using Open Graph, JSON+LD, regular HTML metadata, and series of fallbacks.
 
 ## Table of Contents
 
@@ -57,7 +59,7 @@ const metascraper = require('metascraper')([
   require('metascraper-description')(),
   require('metascraper-image')(),
   require('metascraper-logo')(),
-  require('metascraper-clearbit-logo')(),
+  require('metascraper-clearbit')(),
   require('metascraper-publisher')(),
   require('metascraper-title')(),
   require('metascraper-url')()
@@ -68,8 +70,8 @@ const got = require('got')
 const targetUrl = 'http://www.bloomberg.com/news/articles/2016-05-24/as-zenefits-stumbles-gusto-goes-head-on-by-selling-insurance'
 
 ;(async () => {
-  const {body: html, url} = await got(targetUrl)
-  const metadata = await metascraper({html, url})
+  const { body: html, url } = await got(targetUrl)
+  const metadata = await metascraper({ html, url })
   console.log(metadata)
 })()
 ```
@@ -91,7 +93,7 @@ The output will be something like:
 
 ## Metadata
 
-?> Other metadata can be defined using a custom [rule bundle](#rule-bundles).
+?> Other metadata can be defined using a custom [rule bundle](#rules-bundles).
 
 Here is an example of the metadata that **metascraper** can collect:
 
@@ -106,9 +108,6 @@ A audio URL that best represents the article.
 
 - `description` — eg. *Venture capitalists are raising money at the fastest rate...*<br/>
   The publisher's chosen description of the article.
-
-- `audio` — eg. *https://cf-media.sndcdn.com/U78RIfDPV6ok.128.mp3*<br/>
-A audio URL that best represents the article.
 
 - `video` — eg. *https://assets.entrepreneur.com/content/preview.mp4*<br/>
   A video URL that best represents the article.
@@ -131,7 +130,7 @@ A audio URL that best represents the article.
 - `url` — eg. *http://motherboard.vice.com/read/google-wins-trial-against-oracle-saves-9-billion*<br/>
   The URL of the article.
 
-## How it works
+## How It Works
 
 **metascraper** is built out of rules bundles.
 
@@ -162,7 +161,7 @@ const metascraper = require('metascraper')([
   require('metascraper-description')(),
   require('metascraper-image')(),
   require('metascraper-logo')(),
-  require('metascraper-clearbit-logo')(),
+  require('metascraper-clearbit')(),
   require('metascraper-publisher')(),
   require('metascraper-title')(),
   require('metascraper-url')()
@@ -175,14 +174,14 @@ Use the first parameter to pass custom options specific per each rules bundle:
 
 ```js
 const metascraper = require('metascraper')([
-  require('metascraper-clearbit-logo')({
+  require('metascraper-clearbit')({
     size: 256,
     format: 'jpg'
   })
 ])
 ```
 
-## Rules bundles
+## Rules Bundles
 
 ?> Can't find the rules bundle that you want? Let's [open an issue](https://github.com/microlinkhq/metascraper/issues/new) to create it.
 
@@ -191,54 +190,28 @@ const metascraper = require('metascraper')([
 | [`metascraper-amazon`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-amazon) | [![npm](https://img.shields.io/npm/v/metascraper-amazon.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-amazon) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-amazon&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-amazon) |
 | [`metascraper-audio`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-audio) | [![npm](https://img.shields.io/npm/v/metascraper-audio.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-audio) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-audio&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-audio) |
 | [`metascraper-author`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-author) | [![npm](https://img.shields.io/npm/v/metascraper-author.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-author) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-author&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-author) |
-| [`metascraper-clearbit-logo`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-clearbit-logo) | [![npm](https://img.shields.io/npm/v/metascraper-clearbit-logo.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-clearbit-logo) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-clearbit-logo&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-clearbit-logo) |
+| [`metascraper-clearbit`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-clearbit) | [![npm](https://img.shields.io/npm/v/metascraper-clearbit.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-clearbit) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-clearbit&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-clearbit) |
 | [`metascraper-date`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-date) | [![npm](https://img.shields.io/npm/v/metascraper-date.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-date) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-date&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-date) |
 | [`metascraper-description`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-description) | [![npm](https://img.shields.io/npm/v/metascraper-description.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-description) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-description&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-description) |
 | [`@metascraper/helpers`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-helpers) | [![npm](https://img.shields.io/npm/v/@metascraper/helpers.svg?style=flat-square)](https://www.npmjs.com/package/@metascraper/helpers) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-helpers&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-helpers) |
 | [`metascraper-image`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-image) | [![npm](https://img.shields.io/npm/v/metascraper-image.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-image) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-image&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-image) |
 | [`metascraper-lang`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-lang) | [![npm](https://img.shields.io/npm/v/metascraper-lang.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-lang) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-lang&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-lang) |
-| [`metascraper-lang-detector`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-lang-detector) | [![npm](https://img.shields.io/npm/v/metascraper-lang-detector.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-lang-detector) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-lang-detector&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-lang-detector) |
 | [`metascraper-logo`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-logo) | [![npm](https://img.shields.io/npm/v/metascraper-logo.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-logo) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-logo&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-logo) |
 | [`metascraper-logo-favicon`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-logo-favicon) | [![npm](https://img.shields.io/npm/v/metascraper-logo-favicon.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-logo-favicon) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-logo-favicon&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-logo-favicon) |
 | [`metascraper-media-provider`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-media-provider) | [![npm](https://img.shields.io/npm/v/metascraper-media-provider.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-media-provider) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-media-provider&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-media-provider) |
 | [`metascraper-publisher`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-publisher) | [![npm](https://img.shields.io/npm/v/metascraper-publisher.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-publisher) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-publisher&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-publisher) |
+| [`metascraper-readability`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-readability) | [![npm](https://img.shields.io/npm/v/metascraper-readability.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-readability) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-readability&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-readability) |
 | [`metascraper-soundcloud`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-soundcloud) | [![npm](https://img.shields.io/npm/v/metascraper-soundcloud.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-soundcloud) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-soundcloud&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-soundcloud) |
 | [`metascraper-title`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-title) | [![npm](https://img.shields.io/npm/v/metascraper-title.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-title) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-title&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-title) |
+| [`metascraper-uol`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-uol) | [![npm](https://img.shields.io/npm/v/metascraper-uol.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-uol) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-uol&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-uol) |
 | [`metascraper-url`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-url) | [![npm](https://img.shields.io/npm/v/metascraper-url.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-url) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-url&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-url) |
+| [`metascraper-spotify`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-spotify) | [![npm](https://img.shields.io/npm/v/metascraper-spotify.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-spotify) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-spotify&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-spotify) |
 | [`metascraper-video`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-video) | [![npm](https://img.shields.io/npm/v/metascraper-video.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-video) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-video&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-video) |
 | [`metascraper-youtube`](https://github.com/microlinkhq/metascraper/tree/master/packages/metascraper-youtube) | [![npm](https://img.shields.io/npm/v/metascraper-youtube.svg?style=flat-square)](https://www.npmjs.com/package/metascraper-youtube) | [![Dependency Status](https://david-dm.org/microlinkhq/metascraper.svg?path=packages/metascraper-youtube&style=flat-square)](https://david-dm.org/microlinkhq/metascraper?path=packages/metascraper-youtube) |
 
+### Write Your Own Rules
 
-### Write your own rules
-
-A rule bundle is the simplest way for extending **metascraper** functionality.
-
-A rule bundle can add one or more properties support.
-
-The following schema represents the API compromise that a rule bundle need to follow:
-
-```js
-'use strict'
-
-// `opts` can be loaded using `.metascraperrc` config file
-module.exports = opts => {
-  // You can define as props as you want.
-  // props are organized based on an object key.
-  return ({
-    logo: [
-      // You can setup more than one rules per prop (priority is important!).
-      // They receive as parameter:
-      // - `htmlDom`: the cheerio HTML instance.
-      // - `url`: The input URL used for extact the content.
-      // - `meta`: The current state of the information detected.
-      ({ htmlDom: $, meta, url: baseUrl }) => wrap($ => $('meta[property="og:logo"]').attr('content')),
-      ({ htmlDom: $, meta, url: baseUrl }) => wrap($ => $('meta[itemprop="logo"]').attr('content'))
-    ]
-  })
-}
-```
-
-We recommend check one of the [rule bundles](#rules-bundles) already implemented to have a better perspective.
+See [CONTRIBUTING](/CONTRIBUTING.md).
 
 ## API
 
@@ -258,13 +231,6 @@ Call the instance for extracting content based on rules bundle provided at the c
 
 #### options
 
-##### html
-
-*Required*<br>
-Type: `String`
-
-The HTML markup for extracting the content.
-
 #### url
 
 *Required*<br>
@@ -276,11 +242,26 @@ It is used for resolve relative links that can be present in the HTML markup.
 
 it can be used as fallback field for different rules as well.
 
+##### html
+
+Type: `String`
+
+The HTML markup for extracting the content.
+
+##### escape
+
+Type: `Boolean`<br>
+Default: `true`
+
+It sanetizes the ouptut to prevent xss attacks.
+
 #### rules
 
 Type: `Array`
 
-You can pass additional rules on execution time. These rules will be merged with your loaded rules.
+You can pass additional rules to add on execution time. 
+
+These rules will be merged with your loaded [`rules`](#rules) at the beginning.
 
 ## Benchmark
 

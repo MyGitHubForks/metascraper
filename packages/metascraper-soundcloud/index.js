@@ -1,19 +1,21 @@
 'use strict'
 
-const { $filter, title } = require('@metascraper/helpers')
+const { $filter, author, description, toRule } = require('@metascraper/helpers')
 
-module.exports = () => ({
-  author: [
-    ({ htmlDom: $, meta, url: baseUrl }) =>
-      title($filter($, $('.soundTitle__username')))
-  ],
-  description: [
-    ({ htmlDom: $, meta, url: baseUrl }) =>
-      title(
-        $('.soundTitle__description')
-          .first()
-          .text(),
-        { capitalize: false }
-      )
-  ]
-})
+const memoizeOne = require('memoize-one')
+const { getDomain } = require('tldts')
+
+const isValidUrl = memoizeOne(url => getDomain(url) === 'soundcloud.com')
+
+const toDescription = toRule(description)
+const toAuthor = toRule(author)
+
+module.exports = () => {
+  const rules = {
+    author: [toAuthor($ => $filter($, $('.soundTitle__username')))],
+    description: [toDescription($ => $filter($, $('.soundTitle__description')))]
+  }
+
+  rules.test = ({ url }) => isValidUrl(url)
+  return rules
+}

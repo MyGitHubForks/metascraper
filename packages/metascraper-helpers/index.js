@@ -1,54 +1,85 @@
 'use strict'
 
 const {
-  difference,
-  union,
-  toLower,
-  replace,
-  includes,
-  isString,
-  trim,
+  chain,
+  eq,
   flow,
-  isEmpty
+  get,
+  includes,
+  isArray,
+  isEmpty,
+  isNumber,
+  isString,
+  lte,
+  replace,
+  size,
+  toLower,
+  trim,
+  invoke,
+  castArray
 } = require('lodash')
 
-const imageExtensions = difference(require('image-extensions'), ['gif'])
-const audioExtensions = difference(require('audio-extensions'), ['mp4'])
-const videoExtensions = union(require('video-extensions'), ['gif'])
 const langs = require('iso-639-3').map(({ iso6391 }) => iso6391)
 const condenseWhitespace = require('condense-whitespace')
 const urlRegex = require('url-regex')({ exact: true })
+
 const isRelativeUrl = require('is-relative-url')
 const fileExtension = require('file-extension')
-const { resolve: resolveUrl } = require('url')
 const _normalizeUrl = require('normalize-url')
 const smartquotes = require('smartquotes')
+const { decodeHTML } = require('entities')
 const mimeTypes = require('mime-types')
+const hasValues = require('has-values')
 const chrono = require('chrono-node')
+const truncate = require('truncate')
 const isIso = require('isostring')
 const toTitle = require('title')
-
+const isUri = require('is-uri')
 const { URL } = require('url')
+const memoizeOne = require('memoize-one')
 
-const MIMES_EXTENSIONS = {
-  audio: audioExtensions,
-  video: videoExtensions,
-  image: imageExtensions
+const VIDEO = 'video'
+const AUDIO = 'audio'
+const IMAGE = 'image'
+
+const imageExtensions = chain(require('image-extensions'))
+  .reduce((acc, ext) => ({ ...acc, [ext]: IMAGE }), {})
+  .value()
+
+const audioExtensions = chain(require('audio-extensions'))
+  .difference(['mp4'])
+  .reduce((acc, ext) => ({ ...acc, [ext]: AUDIO }), {})
+  .value()
+
+const videoExtensions = chain(require('video-extensions'))
+  .reduce((acc, ext) => ({ ...acc, [ext]: VIDEO }), {})
+  .value()
+
+const EXTENSIONS = {
+  ...imageExtensions,
+  ...audioExtensions,
+  ...videoExtensions
 }
 
 const REGEX_BY = /^[\s\n]*by|@[\s\n]*/i
 
 const REGEX_LOCATION = /^[A-Z\s]+\s+[-—–]\s+/
 
+const REGEX_TITLE_SEPARATOR = /^[^|\-/•—]+/
+
+const TRUNCATE_MAX_LENGTH = 300
+
+const AUTHOR_MAX_LENGTH = 128
+
 const removeLocation = value => replace(value, REGEX_LOCATION, '')
 
-const urlTest = (url, { relative = true }) =>
+const isUrl = (url, { relative = false } = {}) =>
   relative ? isRelativeUrl(url) || urlRegex.test(url) : urlRegex.test(url)
 
-const isUrl = (url, opts = {}) => !isEmpty(url) && urlTest(url, opts)
-
-const absoluteUrl = (baseUrl, relativePath = '') =>
-  resolveUrl(baseUrl, relativePath)
+const absoluteUrl = (baseUrl, relativePath) => {
+  if (isEmpty(relativePath)) return new URL(baseUrl).toString()
+  return new URL(relativePath, baseUrl).toString()
+}
 
 const sanetizeUrl = (url, opts) =>
   _normalizeUrl(url, {
@@ -58,17 +89,24 @@ const sanetizeUrl = (url, opts) =>
     ...opts
   })
 
-const normalizeUrl = (baseUrl, relativePath, opts) =>
-  sanetizeUrl(absoluteUrl(baseUrl, relativePath), opts)
+const normalizeUrl = (baseUrl, relativePath, opts) => {
+  return sanetizeUrl(absoluteUrl(baseUrl, relativePath), opts)
+}
 
-const removeByPrefix = flow([value => value.replace(REGEX_BY, ''), trim])
+const removeBy = flow([value => value.replace(REGEX_BY, ''), trim])
+
+const removeSeparator = title => {
+  const newTitle = (REGEX_TITLE_SEPARATOR.exec(title) || [])[0] || title
+  return newTitle.trim()
+}
 
 const createTitle = flow([condenseWhitespace, smartquotes])
 
-const titleize = (src, { capitalize = false, removeBy = false } = {}) => {
+const titleize = (src, opts = {}) => {
   let title = createTitle(src)
-  if (removeBy) title = removeByPrefix(title).trim()
-  if (capitalize) title = toTitle(title)
+  if (opts.removeBy) title = removeBy(title)
+  if (opts.removeSeparator) title = removeSeparator(title)
+  if (opts.capitalize) title = toTitle(title)
   return title
 }
 
@@ -80,7 +118,10 @@ const $filter = ($, domNodes, fn = defaultFn) => {
 }
 
 const isAuthor = (str, opts = { relative: false }) =>
-  isString(str) && !isUrl(str, opts)
+  !isUrl(str, opts) &&
+  !isEmpty(str) &&
+  isString(str) &&
+  lte(size(str), AUTHOR_MAX_LENGTH)
 
 const getAuthor = (str, opts = { removeBy: true }) => titleize(str, opts)
 
@@ -89,42 +130,68 @@ const protocol = url => {
   return protocol.replace(':', '')
 }
 
-const createUrlExtensionValidator = collection => url =>
-  isUrl(url) && includes(collection, extension(url))
+const isMediaTypeUrl = (url, type, { ext, ...opts } = {}) =>
+  isUrl(url, opts) && isMediaTypeExtension(url, type, ext)
 
-const createExtensionValidator = collection => url =>
-  includes(collection, extension(url))
+const isMediaTypeExtension = (url, type, ext) =>
+  eq(type, get(EXTENSIONS, ext || extension(url)))
 
-const isVideoUrl = createUrlExtensionValidator(videoExtensions)
+const isMediaUrl = (url, opts) =>
+  isImageUrl(url, opts) || isVideoUrl(url, opts) || isAudioUrl(url, opts)
 
-const isAudioUrl = createUrlExtensionValidator(audioExtensions)
+const isVideoUrl = (url, opts) => isMediaTypeUrl(url, VIDEO, opts)
 
-const isImageUrl = createUrlExtensionValidator(imageExtensions)
+const isAudioUrl = (url, opts) => isMediaTypeUrl(url, AUDIO, opts)
 
-const isVideoExtension = createExtensionValidator(videoExtensions)
+const isImageUrl = (url, opts) => isMediaTypeUrl(url, IMAGE, opts)
 
-const isAudioExtension = createExtensionValidator(audioExtensions)
+const isMediaExtension = url =>
+  isImageExtension(url) || isVideoExtension(url) || isAudioExtension(url)
 
-const isImageExtension = createExtensionValidator(imageExtensions)
+const isVideoExtension = url => isMediaTypeExtension(url, VIDEO)
 
-const extension = url => fileExtension(url).split('?')[0]
+const isAudioExtension = url => isMediaTypeExtension(url, AUDIO)
 
-const description = value => isString(value) && getDescription(value)
+const isImageExtension = url => isMediaTypeExtension(url, IMAGE)
 
-const getDescription = value =>
-  titleize(removeLocation(value), { capitalize: false })
+const extension = (str = '') => {
+  const url = new URL(str, isRelativeUrl(str) ? 'http://localhost' : undefined)
+  url.hash = ''
+  url.search = ''
+  return fileExtension(url.toString())
+}
+
+const description = (value, opts) =>
+  isString(value) && getDescription(value, opts)
+
+const getDescription = (
+  str,
+  { truncateLength = TRUNCATE_MAX_LENGTH, ...opts } = {}
+) => {
+  const description = removeLocation(truncate(str, truncateLength))
+  return titleize(description, opts)
+}
 
 const publisher = value => isString(value) && condenseWhitespace(value)
 
 const author = value => isAuthor(value) && getAuthor(value)
 
-const url = (value, { url }) => isUrl(value) && normalizeUrl(url, value)
+const url = (value, { url = '' } = {}) => {
+  if (isEmpty(value)) return null
+
+  try {
+    const absoluteUrl = normalizeUrl(url, value)
+    if (isUrl(absoluteUrl)) return absoluteUrl
+  } catch (_) {}
+
+  return isUri(value) ? value : null
+}
 
 const date = value => {
-  if (!value) return false
+  if (!(isString(value) || isNumber(value))) return false
 
   // remove whitespace for easier parsing
-  value = value.trim()
+  if (isString(value)) trim(value)
 
   // convert isodates to restringify, because sometimes they are truncated
   if (isIso(value)) return new Date(value).toISOString()
@@ -145,35 +212,124 @@ const lang = value => {
   return isLang ? lang : false
 }
 
-const title = value => isString(value) && titleize(value)
+const title = (value, { removeSeparator = false } = {}) =>
+  isString(value) && titleize(value, { removeSeparator })
 
-const isMime = (type, mime) => {
-  const extension = mimeTypes.extension(type)
-  const collection = MIMES_EXTENSIONS[extension]
-  return includes(collection, mime)
+const isMime = (contentType, type) => {
+  const ext = mimeTypes.extension(contentType)
+  return eq(type, get(EXTENSIONS, ext))
 }
 
-module.exports = {
+const jsonld = memoizeOne((url, $) => {
+  const data = {}
+  try {
+    $('script[type="application/ld+json"]').map((i, e) =>
+      Object.assign(
+        data,
+        ...castArray(
+          JSON.parse(
+            $(e)
+              .contents()
+              .text()
+          )
+        )
+      )
+    )
+  } catch (err) {}
+
+  return data
+})
+
+const $jsonld = propName => ($, url) => {
+  const json = jsonld(url, $)
+  const value = get(json, propName)
+  return isEmpty(value) ? value : decodeHTML(value)
+}
+
+const image = url
+
+const logo = url
+
+const video = (value, opts) => {
+  const urlValue = url(value, opts)
+  return isVideoUrl(urlValue, opts) && urlValue
+}
+
+const audio = (value, opts) => {
+  const urlValue = url(value, opts)
+  return isAudioUrl(urlValue, opts) && urlValue
+}
+
+const validator = {
+  date,
+  audio,
   author,
+  video,
   title,
-  lang,
+  publisher,
+  image,
+  logo,
   url,
   description,
-  date,
+  lang
+}
+
+const toRule = (fn, opts) => rule => ({ htmlDom, url }) => {
+  const value = rule(htmlDom, url)
+  return fn(value, { url, ...opts })
+}
+
+const composeRule = fn => ({ from, to = from, ...opts }) => async ({
+  htmlDom,
+  url
+}) => {
+  const data = await fn(htmlDom, url)
+  const value = get(data, from)
+  return invoke(validator, to, value, { url, ...opts })
+}
+
+const has = value =>
+  value === null || value === false || value === 0 ? false : hasValues(value)
+
+module.exports = {
   $filter,
-  titleize,
+  $jsonld,
   absoluteUrl,
-  sanetizeUrl,
+  audio,
+  audioExtensions,
+  author,
+  composeRule,
+  date,
+  description,
   extension,
+  has,
+  image,
+  imageExtensions,
+  isArray,
+  isAudioExtension,
+  isAudioUrl,
+  isAuthor,
+  isImageExtension,
+  isImageUrl,
+  isMediaExtension,
+  isMediaUrl,
+  isMime,
+  isString,
+  isUrl,
+  isVideoExtension,
+  isVideoUrl,
+  jsonld,
+  lang,
+  logo,
+  normalizeUrl,
   protocol,
   publisher,
-  normalizeUrl,
-  isMime,
-  isUrl,
-  isVideoUrl,
-  isAudioUrl,
-  isImageUrl,
-  isVideoExtension,
-  isAudioExtension,
-  isImageExtension
+  sanetizeUrl,
+  title,
+  titleize,
+  url,
+  validator,
+  video,
+  videoExtensions,
+  toRule
 }
